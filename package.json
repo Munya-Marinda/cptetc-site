@@ -1,0 +1,30 @@
+{
+  "name": "capetownetc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/core": "^1.16.0",
+    "@frontity/html2react": "^1.7.0",
+    "@frontity/mars-theme": "./packages/mars-theme",
+    "@frontity/tiny-router": "^1.4.4",
+    "@frontity/wp-source": "^1.11.7",
+    "capetownetc_1": "file:packages/capetownetc_1",
+    "frontity": "^1.17.2",
+    "react-bootstrap": "^2.9.0",
+    "react-icons": "^4.11.0"
+  }
+}

@@ -1,0 +1,36 @@
+DONE
+
+- Win page:
+
+  - Top Wins change to Top Guides (we don't sell enough comps to populate this).
+  - Changed to Top Guides
+
+- Vouchers page:
+
+  - Headline copy: Exclusive Deals for Cape {town} Etc Readers 
+  - Description edit: To redeem your discount, copy the code from the selected exclusive voucher, then use it at the checkout point to claim your savings. There's something for everyone and for every budget!
+  - Text updated.
+
+  - Daddy's Deals logo still not appearing
+  - Logo now showing.
+
+- Video page:
+
+  - News videos not correctly aligned, must match Things To Do
+  - Aligned.
+
+- Subscribe page:
+  - We need a section where people can enter their details and subscribe to our web mailer
+  - Added a pop-form.
+
+
+NOT DONE
+Homepage:
+
+- Footer, the spacing isn't right and text is squashed (photo of the month / rate card / things to do)
+
+- Win page:
+  - Must automatically update with latest features added to Top Guides category, please
+  - We're using mock-up data for now - but that functionality can easily be built in once we tag/categorize articles correctly.
+
+

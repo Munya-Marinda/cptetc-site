@@ -1,0 +1,46 @@
+{
+  "errors": [],
+  "warnings": [],
+  "hash": "a4b6408898ad21319bb4",
+  "publicPath": "",
+  "outputPath": "C:\\repos\\capetownetc\\build\\static",
+  "assetsByChunkName": {
+    "capetownetc": "capetownetc.module.js"
+  },
+  "assets": [
+    {
+      "name": "capetownetc.module.js",
+      "size": 31247345,
+      "chunks": [
+        "capetownetc"
+      ],
+      "chunkNames": [
+        "capetownetc"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "namedChunkGroups": {
+    "capetownetc": {
+      "chunks": [
+        "capetownetc"
+      ],
+      "assets": [
+        "capetownetc.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "capetownetc",
+      "files": [
+        "capetownetc.module.js"
+      ]
+    }
+  ]
+}
