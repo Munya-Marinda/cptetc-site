@@ -10,12 +10,19 @@ const ArticleListView_2 = ({
   postsSet,
   WP_SiteUrl,
   postsSet_categoryID,
+  postsSet_categoryTitle,
   title,
   link_1,
   link_2,
 }) => {
   return (
-    <div className="post_block_2_header_container_1">
+    <div
+      className="post_block_2_header_container_1"
+      style={{
+        transform: "translateY(-22px)",
+      }}
+    >
+      {/* ArticleListView_2 */}
       <div className="post_block_2_header_parent_1">
         <span className="post_block_2_header_1">{title}</span>
         <div className="post_block_2_headerLinks_parent_1">
@@ -43,6 +50,12 @@ const ArticleListView_2 = ({
                       null,
                       120
                     );
+                    const _categoryText =
+                      customPost.categoryText !== undefined &&
+                      customPost.categoryText !== null &&
+                      customPost.categoryText !== ""
+                        ? customPost.categoryText
+                        : postsSet_categoryTitle;
                     //
                     //
                     //
@@ -58,7 +71,17 @@ const ArticleListView_2 = ({
                             alt=""
                             className="post_block_2_featureImg_1"
                           />
-                          <ArticleIcons />
+                          <ArticleIcons
+                            commentsLink={customPost.commentsSlug}
+                            cameraLink={customPost.slug}
+                            categoryText={_categoryText}
+                            categoryLink={"/news/"}
+                            //
+                            showCamera={true}
+                            videoLink={customPost.slug}
+                            showVideo={true}
+                            showTopRight={true}
+                          />
                         </div>
                         <div className="post_block_3_featuredPostText_parent_1">
                           <Link
@@ -67,10 +90,7 @@ const ArticleListView_2 = ({
                           >
                             <h1 dangerouslySetInnerHTML={customPost.title} />
                           </Link>
-                          <CategoryDateText
-                            categoryText={customPost.categoryText}
-                            dateText={customPost.date}
-                          />
+                          <CategoryDateText dateText={customPost.date} />
                           <div
                             className="single_feature_post_block_text_parent_1"
                             style={{ marginTop: "20px" }}
@@ -160,7 +180,7 @@ const ArticleListView_2 = ({
                             />
                             <Link link={customPost.slug}>
                               <h1
-                                style={{ marginTop: "5px" }}
+                                style={{ marginTop: "10px" }}
                                 dangerouslySetInnerHTML={customPost.title}
                               />
                             </Link>

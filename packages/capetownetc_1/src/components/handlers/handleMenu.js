@@ -2,6 +2,13 @@ import { fetch } from "frontity";
 
 const fetchMenu = () => {
   return {
+    _0000_: {
+      id: "3",
+      title: "Home",
+      url: "/",
+      type: "page",
+      children: [],
+    },
     _20074_: {
       id: "3",
       title: "News",

@@ -11,6 +11,8 @@ import { CustomWPRestServicePostObject, filterAndSortPosts } from "../js/main";
 import { Placeholder } from "react-bootstrap";
 import ArticleListView_1 from "../components/article-listing/ArticleListView_1";
 import ArticleListView_2 from "../components/article-listing/ArticleListView_2";
+import SidebarListingWithOutImages from "../components/sidebars/SidebarListingWithOutImages";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -402,12 +404,12 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             )}
           </div>
 
-          <div className="ad_horizontal_2_parent content_spacing_top_2">
+          <div className="ad_horizontal_2_parent content_spacing_top_3">
             <h6 className="ad_text_1">ADVERTISEMENT</h6>
             <div className="ad_horizontal_2"></div>
           </div>
 
-          <div className="post_block_2_posts_container_2 content_spacing_top_2 hide_on_desktop">
+          <div className="post_block_2_posts_container_2 content_spacing_top_3 hide_on_desktop">
             {postsSet1 !== null ? (
               <>
                 {postsSet1 !== false ? (
@@ -564,7 +566,16 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 </div>
               </div>
 
-              <div className="magazine_topNews_parent_1">
+              <SidebarListingWithOutImages
+                link={"/news/"}
+                title={"Top News"}
+                postsSet={postsSet5}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"NEWS"}
+                postsSet_categoryID={postsSet5_categoryID}
+              />
+
+              {/* <div className="magazine_topNews_parent_1">
                 <Link link="/news/">
                   <div className="magazine_topNews_header_1">
                     <span className="magazine_topNews_headerText_1">
@@ -648,7 +659,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               <div className="ad_square_1">
                 {ad_1 !== null ? (
@@ -724,7 +735,17 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               <div className="ad_square_1">
                 <p>[AD]</p>
               </div>
-              <div className="magazine_topNews_parent_1">
+
+              <SidebarListingWithImages
+                title="Top Guides"
+                link={"/things-to-do/"}
+                postsSet={postsSet4}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"THINGS TO DO"}
+                postsSet_categoryID={postsSet4_categoryID}
+              />
+
+              {/* <div className="magazine_topNews_parent_1">
                 <Link link="#top-news">
                   <div className="magazine_topNews_header_1">
                     <span className="magazine_topNews_headerText_1">
@@ -821,7 +842,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

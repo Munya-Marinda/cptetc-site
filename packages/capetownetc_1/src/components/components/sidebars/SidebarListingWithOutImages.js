@@ -3,9 +3,11 @@ import Link from "@frontity/components/link";
 import { Placeholder } from "react-bootstrap";
 import CategoryDateText from "../CategoryDateText";
 import { CustomWPRestServicePostObject } from "../../js/main";
-import { FaGreaterThan } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 const SidebarListingWithOutImages = ({
+  link,
+  title,
   postsSet,
   WP_SiteUrl,
   postsSet_categoryID,
@@ -13,11 +15,12 @@ const SidebarListingWithOutImages = ({
 }) => {
   return (
     <div className="magazine_topNews_parent_1">
-      <Link link="#top-news">
+      {/* SidebarListingWithOutImages */}
+      <Link link={link}>
         <div className="magazine_topNews_header_1">
-          <span className="magazine_topNews_headerText_1">Top Guides</span>
+          <span className="magazine_topNews_headerText_1">{title}</span>
           <span className="magazine_topNews_icon_1">
-            <FaGreaterThan />
+            <FaAngleRight size={25} />
           </span>
         </div>
       </Link>
@@ -35,29 +38,29 @@ const SidebarListingWithOutImages = ({
                         post,
                         postsSet_categoryID
                       );
+                      const _categoryText =
+                        customPost.categoryText !== undefined &&
+                        customPost.categoryText !== null &&
+                        customPost.categoryText !== ""
+                          ? customPost.categoryText
+                          : postsSet_categoryTitle;
                       //
                       //
                       //
                       //
                       //
                       return (
-                        <div className="topGuides_container_1" key={index}>
-                          <div className="topGuides_postImg_1">
-                            <img
-                              alt=""
-                              src={customPost.imgUrl}
-                              className="post_block_3_postImg_2"
-                            />
-                          </div>
-                          <div className="topGuides_textContainer_1">
-                            <Link link={customPost.slug}>
-                              <h6 dangerouslySetInnerHTML={customPost.title} />
-                            </Link>
-                            <CategoryDateText
-                              categoryText={customPost.categoryText}
-                              dateText={customPost.date}
-                            />
-                          </div>
+                        <div
+                          className="magazine_topNews_container_1"
+                          key={index}
+                        >
+                          <Link link={customPost.slug}>
+                            <h6 dangerouslySetInnerHTML={customPost.title} />
+                          </Link>
+                          <CategoryDateText
+                            categoryText={_categoryText}
+                            dateText={customPost.date}
+                          />
                         </div>
                       );
                     })}
@@ -75,15 +78,23 @@ const SidebarListingWithOutImages = ({
             )}
           </>
         ) : (
-          <div className="topGuides_parent_1">
-            {["", "", "", "", ""].map((m, n) => (
-              <div className="placeholder_child_8_parent_parent" key={n}>
-                <Placeholder animation="glow" className="">
-                  <Placeholder className="placeholder_child_8_1" />
-                </Placeholder>
-                <Placeholder animation="glow" className="">
-                  <Placeholder xs={10} className="placeholder_child_8_2" />
-                  <Placeholder xs={5} className="placeholder_child_8_2" />
+          <div className="post_block_3_posts_container_1">
+            {["", "", "", "", "", "", "", "", ""].map((m, n) => (
+              <div className="placeholder_child_7_parent_parent" key={n}>
+                <Placeholder
+                  animation="glow"
+                  className="placeholder_child_7_parent"
+                >
+                  <Placeholder
+                    xs={7}
+                    bg="dark"
+                    className="placeholder_child_7_1"
+                  />
+                  <Placeholder
+                    xs={4}
+                    bg="dark"
+                    className="placeholder_child_7_1"
+                  />
                 </Placeholder>
               </div>
             ))}

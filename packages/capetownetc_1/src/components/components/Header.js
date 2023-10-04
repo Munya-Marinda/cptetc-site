@@ -643,7 +643,10 @@ const Header = ({
                                           dateText={customPost.date}
                                           categoryText={customPost.categoryText}
                                         />
-                                        <div className="header_carousel_parent_1">
+                                        <div
+                                          className="header_carousel_parent_1"
+                                          style={{ marginTop: "8px" }}
+                                        >
                                           <Link
                                             link={customPost_slug}
                                             className="header_carousel_header_1"

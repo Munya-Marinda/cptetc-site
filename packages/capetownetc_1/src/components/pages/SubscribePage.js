@@ -200,6 +200,24 @@ const SubscribePage = ({
   //
   //
   //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
   return (
     <main className="homepage_main_parent_1">
       <div id="sticky_here"></div>
@@ -228,18 +246,64 @@ const SubscribePage = ({
                 <img
                   className="magazine_preview_img_1"
                   src="https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg"
-                  alt="Latest CapeETC cover" 
+                  alt="Latest CapeETC cover"
                 />
                 <div className="subscribe_container_2">
-                  {pageObject &&
-                    pageObject !== undefined &&
-                    pageObject !== null && (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: pageObject.content.rendered,
-                        }}
-                      />
-                    )}
+                  <h2
+                    style={{
+                      fontFamily: "Roboto",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Cape {"{Town}"} Etc
+                  </h2>
+                  <h6
+                    style={{
+                      margin: "25px 0px 50px 0px",
+                    }}
+                  >
+                    Month 2023
+                  </h6>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: "bold",
+                      fontFamily: "Roboto",
+                    }}
+                  >
+                    Cape Etc magazine is your essential companion for
+                    discovering the best of the Mother City. We feature
+                    top-notch art, restaurants, adventures, accommodations, and
+                    much more. Consider us your key to unlocking the city and
+                    its surrounding wonders. Let us guide you!
+                    <br />* 9 575 ABC (Oct - Dec 2014). Distributed by On the
+                    Dot to CNA and Exclusive Books throughout the Western Cape.
+                    Cape Etc is also available at select outlets, including:
+                  </p>
+                  <ul
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: "bold",
+                      fontFamily: "Roboto",
+                    }}
+                  >
+                    <li>Woolworths</li>
+                    <li>
+                      Rooms in choice Cape hotels, including The Twelve
+                      Apostles, Cape Grace, Mount Nelson, Winchester Mansions,
+                      Table Bay Hotel, One&Only Cape Town and many others
+                    </li>
+                    <li>Upmarket restaurants and entertainment venues</li>
+                    <li>
+                      In-flight on Lufthansa and Emirates flights into Cape Town
+                    </li>
+                  </ul>
+
+                  <div className="subscribe_button_group">
+                    <button className="subscribe_button_1">BUY PRINT</button>
+                    <button className="subscribe_button_1">BUY DIGITAL</button>
+                    <button className="subscribe_button_2">SUBSCRIBE</button>
+                  </div>
                 </div>
               </div>
               <div className="subscribe_recent_issues_parent_1 content_spacing_top_2">
@@ -329,7 +393,7 @@ const SubscribePage = ({
                 </div>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         <div className="ad_vertical_1_parent">

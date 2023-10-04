@@ -51,7 +51,7 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div  >
+          <div>
             <div className="subscribeToMailer_img_parent_1">
               <img
                 src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/web-mail-subscription-1.png"
@@ -100,7 +100,13 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
           </button>
         </Modal.Footer>
       </Modal>
-      <div className="footer_parent_1">
+
+      <div
+        className="footer_parent_1"
+        style={{
+          marginTop: "125px",
+        }}
+      >
         <div className="footer_container_1">
           <div className="footer_subToday_container_1">
             <span>Subscribe Today</span>

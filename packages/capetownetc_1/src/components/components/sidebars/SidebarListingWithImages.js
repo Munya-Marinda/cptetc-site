@@ -3,9 +3,12 @@ import Link from "@frontity/components/link";
 import { Placeholder } from "react-bootstrap";
 import CategoryDateText from "../CategoryDateText";
 import { CustomWPRestServicePostObject } from "../../js/main";
-import { FaGreaterThan } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
+import ArticleIcons from "../ArticleIcons";
 
 const SidebarListingWithImages = ({
+  link,
+  title,
   postsSet,
   postsSet_categoryID,
   postsSet_categoryTitle,
@@ -13,11 +16,12 @@ const SidebarListingWithImages = ({
 }) => {
   return (
     <div className="magazine_topNews_parent_1">
-      <Link link="#top-news">
+      {/* SidebarListingWithImages */}
+      <Link link={link}>
         <div className="magazine_topNews_header_1">
-          <span className="magazine_topNews_headerText_1">Top Guides</span>
+          <span className="magazine_topNews_headerText_1">{title}</span>
           <span className="magazine_topNews_icon_1">
-            <FaGreaterThan />
+            <FaAngleRight size={25} />
           </span>
         </div>
       </Link>
@@ -55,10 +59,22 @@ const SidebarListingWithImages = ({
                               src={customPost.imgUrl}
                               className="post_block_3_postImg_2"
                             />
+                            <ArticleIcons
+                              commentsLink={customPost.commentsSlug}
+                              showCamera={false}
+                              //
+                              videoLink={customPost.slug}
+                              showTopRight={true}
+                            />
                           </div>
                           <div className="topGuides_textContainer_1">
                             <Link link={customPost.slug}>
-                              <h6 dangerouslySetInnerHTML={customPost.title} />
+                              <h6
+                                dangerouslySetInnerHTML={customPost.title}
+                                style={{
+                                  marginBottom: "5px",
+                                }}
+                              />
                             </Link>
                             <CategoryDateText
                               categoryText={_categoryText}

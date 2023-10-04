@@ -29,7 +29,13 @@ const ArticleListView_1 = ({
   //
   //
   return (
-    <div className="post_block_2_header_container_1">
+    <div
+      className="post_block_2_header_container_1"
+      style={{
+        transform: "translateY(-22px)",
+      }}
+    >
+      {/* ArticleListView_1 */}
       <div className="post_block_2_header_parent_1">
         <span className="post_block_2_header_1">{title}</span>
         <div className="post_block_2_headerLinks_parent_1">
