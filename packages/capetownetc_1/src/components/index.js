@@ -20,6 +20,7 @@ import fetchMenu from "./handlers/handleMenu";
 import WinCategoryPage from "./pages/WinCategoryPage";
 import WinCompetitionsPage from "./pages/WinCompetitionsPage";
 import RateCardPage from "./pages/RateCardPage";
+import SubmitYourContent from "./pages/SubmitYourContent";
 
 const Root = ({ state }) => {
   const [headerData, setHeaderData] = useState("/");
@@ -108,6 +109,11 @@ const Root = ({ state }) => {
           when={data.route === "/"}
           headerStickyContainerHeight={headerStickyContainerHeight}
           headerIsSticky={headerIsSticky}
+        />
+        <SubmitYourContent
+          headerIsSticky={headerIsSticky}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          when={data.route === "/submit-your-content/"}
         />
         <ContactPage
           headerIsSticky={headerIsSticky}

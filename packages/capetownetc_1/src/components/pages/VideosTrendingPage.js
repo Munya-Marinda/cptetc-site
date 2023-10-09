@@ -137,37 +137,36 @@ const VideosTrendingPage = ({
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
               <div className="post_block_2_header_parent_2">
-                <span className="post_block_2_header_1">
-                  Videos: Things To Do
-                </span>
+                <span className="post_block_2_header_1">News</span>
                 <div className="post_block_2_headerLinks_parent_1">
                   <Link
-                    link="/videos/things-to-do-video/"
+                    link="/videos/news-videos/"
                     className="post_block_2_headerLink_1"
                   >
                     <span> SEE ALL </span>
                   </Link>
                   <span className="post_block_2_headerLink_spacer_1"> | </span>
                   <Link
-                    link="/videos/things-to-do-video/"
+                    link="/videos/news-videos/"
                     className="post_block_2_headerLink_1"
                   >
                     <span> THE LATEST </span>
                   </Link>
                 </div>
               </div>
+
               <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet2 !== null ? (
+                {postsSet1 !== null ? (
                   <>
-                    {postsSet2 !== false ? (
+                    {postsSet1 !== false ? (
                       <>
-                        {postsSet2.length !== 0 ? (
+                        {postsSet1.length !== 0 ? (
                           <>
-                            {postsSet2.slice(0, 6).map((post, index) => {
+                            {postsSet1.slice(0, 6).map((post, index) => {
                               const customPost = CustomWPRestServicePostObject(
                                 WP_SiteUrl,
                                 post,
-                                postsSet2_categoryID
+                                postsSet1_categoryID
                               );
                               //
                               //
@@ -237,6 +236,7 @@ const VideosTrendingPage = ({
             </div>
           </div>
         </div>
+
         <div className="ad_vertical_1_parent">
           <div className="ad_vertical_1"></div>
         </div>
@@ -265,36 +265,35 @@ const VideosTrendingPage = ({
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
               <div className="post_block_2_header_parent_2">
-                <span className="post_block_2_header_1">Videos: News</span>
+                <span className="post_block_2_header_1">Things To Do</span>
                 <div className="post_block_2_headerLinks_parent_1">
                   <Link
-                    link="/videos/news-videos/"
+                    link="/videos/things-to-do-video/"
                     className="post_block_2_headerLink_1"
                   >
                     <span> SEE ALL </span>
                   </Link>
                   <span className="post_block_2_headerLink_spacer_1"> | </span>
                   <Link
-                    link="/videos/news-videos/"
+                    link="/videos/things-to-do-video/"
                     className="post_block_2_headerLink_1"
                   >
                     <span> THE LATEST </span>
                   </Link>
                 </div>
               </div>
-
               <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet1 !== null ? (
+                {postsSet2 !== null ? (
                   <>
-                    {postsSet1 !== false ? (
+                    {postsSet2 !== false ? (
                       <>
-                        {postsSet1.length !== 0 ? (
+                        {postsSet2.length !== 0 ? (
                           <>
-                            {postsSet1.slice(0, 6).map((post, index) => {
+                            {postsSet2.slice(0, 6).map((post, index) => {
                               const customPost = CustomWPRestServicePostObject(
                                 WP_SiteUrl,
                                 post,
-                                postsSet1_categoryID
+                                postsSet2_categoryID
                               );
                               //
                               //

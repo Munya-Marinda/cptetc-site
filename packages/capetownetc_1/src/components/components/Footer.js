@@ -103,9 +103,9 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
 
       <div
         className="footer_parent_1"
-        style={{
-          marginTop: "125px",
-        }}
+        // style={{
+        //   marginTop: "125px",
+        // }}
       >
         <div className="footer_container_1">
           <div className="footer_subToday_container_1">

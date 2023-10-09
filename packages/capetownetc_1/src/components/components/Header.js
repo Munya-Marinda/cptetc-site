@@ -31,8 +31,6 @@ const Header = ({
   change_headerStickyContainerHeight,
 }) => {
   const WP_SiteUrl = state.source.url;
-  const [toggleSubmitYourContentModal, setToggledleSubmitYourContentModal] =
-    useState(false);
 
   const maxCarouselItems = 4;
   const postsSet1_categoryID = 3;
@@ -160,10 +158,6 @@ const Header = ({
   };
   //
   //
-  const handleSubmitYourContentClose = () =>
-    setToggledleSubmitYourContentModal(false);
-  const handleSubmitYourContentShow = () =>
-    setToggledleSubmitYourContentModal(true);
   //
   //
   useEffect(() => {
@@ -214,48 +208,6 @@ const Header = ({
   //
   return (
     <>
-      <Modal
-        show={toggleSubmitYourContentModal}
-        onHide={handleSubmitYourContentClose}
-        backdrop="static"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>
-            <h4 className="submitYourContent_modal_header_1">
-              Submit Your Content
-            </h4>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div style={{ maxWidth: "600px" }}>
-            <p
-              style={{
-                padding: "10px 15px",
-                backgroundColor: "#f1f1f1",
-                margin: "0px",
-              }}
-            >
-              By clicking 'Submit' below, I am the sole rights holder of the
-              Content, I am over 18 years old and I accept the above Terms &
-              Conditions OR I am the parent or legal guardian of the sole rights
-              holder of the Content who is under 18 years old and I accept the
-              above Terms & Conditions on the right's holder's behalf as agent
-              or attorney, as if I was the rights holder for these purposes.
-            </p>
-            <SubmitYourContentForm />
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <button
-            variant="secondary"
-            className="submitYourContent_parent_1"
-            onClick={handleSubmitYourContentClose}
-          >
-            Close
-          </button>
-        </Modal.Footer>
-      </Modal>
-
       <div className="ad_horizontal_parent_1">
         <div className="ad_horizontal_1">[AD]</div>
       </div>
@@ -274,12 +226,11 @@ const Header = ({
           </div>
           <div className="topbar_socialLinks_submit_parent_1">
             <SocialMediaIcons />
-            <button
-              onClick={handleSubmitYourContentShow}
-              className="submitYourContent_parent_1"
-            >
-              SUBMIT YOUR CONTENT
-            </button>
+            <Link link="/submit-your-content/">
+              <button className="submitYourContent_parent_1">
+                SUBMIT YOUR CONTENT
+              </button>
+            </Link>
           </div>
         </div>
       </div>

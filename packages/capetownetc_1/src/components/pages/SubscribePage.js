@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaGreaterThan,
+  FaLessThan,
+} from "react-icons/fa";
 import { Carousel, Placeholder } from "react-bootstrap";
 
 //
@@ -19,7 +24,7 @@ const CustomPrevButton = ({ onClick }) => {
       className="subscribe_recent_issues_icon_1"
       id="subscribe_recent_issues_icon_id_1"
     >
-      <FaLessThan />
+      <FaAngleLeft size={30} />
     </span>
   );
 };
@@ -31,7 +36,7 @@ const CustomNextButton = ({ onClick }) => {
       className="subscribe_recent_issues_icon_1"
       id="subscribe_recent_issues_icon_id_2"
     >
-      <FaGreaterThan />
+      <FaAngleRight size={30} />
     </span>
   );
 };
@@ -87,74 +92,62 @@ const SubscribePage = ({
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "January 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "February 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "March 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "April 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "May 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "June 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "July 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "August 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "September 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "October 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "November 2023",
       },
       {
         link: "https://github.com/",
         url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        month: "December 2023",
       },
     ];
     const issuesChunks = [];
@@ -257,13 +250,7 @@ const SubscribePage = ({
                   >
                     Cape {"{Town}"} Etc
                   </h2>
-                  <h6
-                    style={{
-                      margin: "25px 0px 50px 0px",
-                    }}
-                  >
-                    Month 2023
-                  </h6>
+                  <h6>Month 2023</h6>
                   <p
                     style={{
                       fontSize: "14px",
@@ -284,6 +271,7 @@ const SubscribePage = ({
                     style={{
                       fontSize: "14px",
                       fontWeight: "bold",
+                      marginBottom: "40px",
                       fontFamily: "Roboto",
                     }}
                   >
@@ -339,7 +327,10 @@ const SubscribePage = ({
                                   //
                                   //
                                   <Carousel.Item key={index1} className="">
-                                    <div className="subscribe_recent_issues_carousel_1">
+                                    <div
+                                      className="subscribe_recent_issues_carousel_1"
+                                      style={{ padding: "10px 0px" }}
+                                    >
                                       {postChunk.map((img, index2) => {
                                         //
                                         //
@@ -352,6 +343,20 @@ const SubscribePage = ({
                                               className="subscribe_recent_issues_img_1"
                                               src={img.url}
                                             />
+                                            <div
+                                              style={{
+                                                width: "120px",
+                                                margin: "0px 10px",
+                                                textAlign: "center",
+                                                boxShadow:
+                                                  "1px 1px 5px rgba(0,0,0,0.5)",
+                                                padding: "5px 0px 1px 0px",
+                                              }}
+                                            >
+                                              <h6 style={{ fontSize: "12px" }}>
+                                                {img.month}
+                                              </h6>
+                                            </div>
                                           </Link>
                                         );
                                         //
@@ -390,6 +395,11 @@ const SubscribePage = ({
                       </Placeholder>
                     </div>
                   )}
+                </div>
+
+                <div className="ad_horizontal_2_parent content_spacing_top_2">
+                  <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                  <div className="ad_horizontal_2"></div>
                 </div>
               </div>
             </div>
