@@ -2594,6 +2594,70 @@ INFINITE AUTO SLIDER
   margin: 0px;
 }
 
+.submitYourContent_form_group_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.submitYourContent_form_group_2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.submitYourContent_form_group_2_1 > div {
+  width: 50%;
+}
+
+.submitYourContent_form_group_2_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.submitYourContent_form_group_3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submitYourContent_form_text_1 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.submitYourContent_form_text_1 > span {
+  color: red;
+}
+
+.submitYourContent_form_text_input_1,
+.submitYourContent_form_text_input_2 {
+  border-radius: 5px;
+  border: 1px silver solid;
+}
+
+.submitYourContent_form_text_input_1 {
+  width: 40%;
+}
+
+.submitYourContent_form_text_input_2 {
+  width: 80%;
+}
+
+.submitYourContent_form_button_1 {
+  border: 0px;
+  color: white;
+  margin-left: 10px;
+  padding: 5px 70px;
+  border-radius: 0px;
+  background-color: var(--pinkish_color);
+}
+
 /* 
 //
 //
