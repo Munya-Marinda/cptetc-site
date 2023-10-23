@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "@frontity/components/link";
 import CategoryDateText from "./CategoryDateText";
-import { FaPlayCircle } from "react-icons/fa";
 
 const FullWidthPost = ({ title, link }) => {
   return (
@@ -21,7 +20,10 @@ const FullWidthPost = ({ title, link }) => {
         </div>
         <Link link="#playVideo">
           <div className="playVideo_parent_1">
-            <FaPlayCircle />
+            <img
+              src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/video-icon-0.svg"
+              style={{ width: "40px" }}
+            />
           </div>
         </Link>
       </div>

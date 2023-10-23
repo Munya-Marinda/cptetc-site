@@ -8,6 +8,7 @@ const SubmitYourContent = ({
   headerStickyContainerHeight,
   headerIsSticky,
 }) => {
+  const [adPositions, setAdPositions] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const postsSet1_categoryID = 7736;
   const [postsSet1, setPostsSet1] = useState(null);
@@ -38,6 +39,21 @@ const SubmitYourContent = ({
     };
     fetch1Posts();
     //
+    //
+    const setAdPositionsFunc = () => {
+      const verticalAd1Left = document
+        .getElementById("ad_vertical_1_id_1_position")
+        .getBoundingClientRect().left;
+      const verticalAd2Left = document
+        .getElementById("ad_vertical_1_id_2_position")
+        .getBoundingClientRect().left;
+      setAdPositions({
+        verticalAd1Left: verticalAd1Left,
+        verticalAd2Left: verticalAd2Left,
+      });
+    };
+    setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
   //
@@ -58,7 +74,7 @@ const SubmitYourContent = ({
             className="ad_vertical_1"
             id="ad_vertical_1_id_1"
             style={
-              headerIsSticky && isSticky
+              headerIsSticky
                 ? {
                     position: "fixed",
                     top: headerStickyContainerHeight,
@@ -66,6 +82,10 @@ const SubmitYourContent = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -420,12 +440,13 @@ const SubmitYourContent = ({
             </div>
           </div>
         </div>
+
         <div className="ad_vertical_1_parent">
           <div
             className="ad_vertical_1"
             id="ad_vertical_1_id_2"
             style={
-              headerIsSticky && isSticky
+              headerIsSticky
                 ? {
                     position: "fixed",
                     top: headerStickyContainerHeight,
@@ -433,6 +454,10 @@ const SubmitYourContent = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

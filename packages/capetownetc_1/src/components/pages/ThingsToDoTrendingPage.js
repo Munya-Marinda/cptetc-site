@@ -235,12 +235,14 @@ const ThingsToDoTrendingPage = ({
     };
     window.addEventListener("scroll", handleScroll);
 
+    //
+    //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -248,6 +250,7 @@ const ThingsToDoTrendingPage = ({
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -286,6 +289,10 @@ const ThingsToDoTrendingPage = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -595,6 +602,10 @@ const ThingsToDoTrendingPage = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

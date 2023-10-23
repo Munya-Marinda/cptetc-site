@@ -167,6 +167,10 @@ const WinTrending = ({
                 : {}
             }
           ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
+          ></div>
         </div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
@@ -428,6 +432,10 @@ const WinTrending = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

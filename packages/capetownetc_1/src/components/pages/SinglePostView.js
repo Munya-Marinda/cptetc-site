@@ -85,16 +85,15 @@ const SinglePostView = ({
     fetch1Posts();
     //
   }, [post]);
-
   //
   //
   useEffect(() => {
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -102,12 +101,14 @@ const SinglePostView = ({
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
   //
   //
   return (
-    <main className="homepage_main_parent_1">
+    <main className="homepage_main_parent_1"> 
+
       <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_1">
         <div className="ad_vertical_1_parent">
           <div
@@ -122,6 +123,10 @@ const SinglePostView = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -166,7 +171,7 @@ const SinglePostView = ({
                   }
                 }
               />
- 
+
               <div className="post_block_2_posts_container_2 content_spacing_top_2">
                 {postsSet1 !== null ? (
                   <>
@@ -403,6 +408,10 @@ const SinglePostView = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

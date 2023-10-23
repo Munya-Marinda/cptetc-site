@@ -63,13 +63,13 @@ const ArticleListView_2 = ({
                     return (
                       <div
                         key={index}
-                        className="post_block_2_posts_container_1"
+                        className="post_block_2_posts_container_3"
                       >
                         <div className="post_block_2_postImg_container_1 min_height_200px">
                           <img
                             src={customPost.imgUrl}
                             alt=""
-                            className="post_block_2_featureImg_1"
+                            className="post_block_2_featureImg_2"
                           />
                           <ArticleIcons
                             commentsLink={customPost.commentsSlug}
@@ -202,7 +202,7 @@ const ArticleListView_2 = ({
             )}
           </>
         ) : (
-          <div className="post_block_3_posts_container_1 content_spacing_top_2">
+          <div className="post_block_3_posts_container_1 content_spacing_top_2 content_spacing_bottom_2">
             {["", "", "", "", "", "", "", "", ""].map((m, n) => (
               <div className="post_block_3_post_container_1" key={n}>
                 <Placeholder

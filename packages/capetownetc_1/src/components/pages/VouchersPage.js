@@ -90,12 +90,14 @@ const VouchersPage = ({
     };
     window.addEventListener("scroll", handleScroll);
 
+    //
+    //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -103,6 +105,7 @@ const VouchersPage = ({
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -133,7 +136,11 @@ const VouchersPage = ({
           </h6>
           <div className="vouchers_page_poweredBy_1">
             <h6 className="vouchers_page_poweredBy_text_1">POWERED BY</h6>
-            <img className="daddys_deals_logo_1" src="https://daddysdeals.co.za/wp-content/uploads/2023/03/final_logo-2.png" alt="Daddy's Deals Logo" />
+            <img
+              className="daddys_deals_logo_1"
+              src="https://daddysdeals.co.za/wp-content/uploads/2023/03/final_logo-2.png"
+              alt="Daddy's Deals Logo"
+            />
           </div>
         </div>
       </div>
@@ -154,6 +161,10 @@ const VouchersPage = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -182,6 +193,10 @@ const VouchersPage = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

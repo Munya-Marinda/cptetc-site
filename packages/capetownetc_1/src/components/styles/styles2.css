@@ -1,0 +1,25 @@
+#home-featuredposts {
+  width: 100%;
+  height: 400px;
+  max-width: 1180px;
+  margin: 30px auto 0;
+  border: 2px solid black;
+}
+
+@media only screen and (max-width: 1235px) {
+  #home-featuredposts {
+    padding: 0 15px;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  #home-featuredposts {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home-featuredposts {
+    padding: 0;
+  }
+}

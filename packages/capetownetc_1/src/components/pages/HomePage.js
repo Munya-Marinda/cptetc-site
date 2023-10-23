@@ -197,10 +197,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
     //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -208,6 +208,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
   //
@@ -235,7 +236,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
   return (
     <main className="homepage_main_parent_1">
-      <div className="post_block_1_parent_1 content_spacing_bottom_2 content_spacing_top_2">
+      <div className="post_block_1_parent_1 content_spacing_bottom_2 content_spacing_top_3">
         <div className="ad_vertical_1_parent">
           <div
             className="ad_vertical_1"
@@ -250,7 +251,12 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 : {}
             }
           ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
+          ></div>
         </div>
+
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             {postsSet1 !== null ? (
@@ -523,12 +529,16 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 : {}
             }
           ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
+          ></div>
         </div>
       </div>
 
       <FullScreenCategories />
 
-      <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_2">
+      <div className="post_block_1_parent_1 content_spacing_top_2">
         <div className="ad_vertical_1_parent"></div>
 
         <div className="post_block_1_parent_2">

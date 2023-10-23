@@ -9,17 +9,23 @@ import { Carousel, Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
 import CategoryDateText from "./CategoryDateText";
 import Accordion from "react-bootstrap/Accordion";
-import Modal from "react-bootstrap/Modal";
 import SocialMediaIcons_sm from "./SocialMediaIcons_sm";
-import SubmitYourContentForm from "./SubmitYourContentForm";
 import fetchMenu from "../handlers/handleMenu";
 
 const CustomPrevButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_prev_button" />;
+  return (
+    <div onClick={onClick} className="header_prev_button">
+      <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-less-than-1.svg" />
+    </div>
+  );
 };
 
 const CustomNextButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_next_button" />;
+  return (
+    <div onClick={onClick} className="header_next_button">
+      <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
+    </div>
+  );
 };
 
 const Header = ({
@@ -31,7 +37,7 @@ const Header = ({
   change_headerStickyContainerHeight,
 }) => {
   const WP_SiteUrl = state.source.url;
-
+  //
   const maxCarouselItems = 4;
   const postsSet1_categoryID = 3;
   const [postsSet1, setPostsSet1] = useState(null);
@@ -45,11 +51,11 @@ const Header = ({
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   //
   const data = state.source.get(state.router.link);
-
+  //
   useEffect(() => {
     updateNavBar(null);
   }, [data.route]);
-
+  //
   useEffect(() => {
     if (menu === null || menu === undefined) {
       const fetchMenuData = async () => {
@@ -71,7 +77,7 @@ const Header = ({
       updateNavBar(!menu || menu === undefined || menu === null ? [] : menu);
     }
   }, [menu]);
-
+  //
   useEffect(() => {
     //
     //
@@ -105,7 +111,7 @@ const Header = ({
     fetch1Posts();
     //
   }, []);
-
+  //
   const updateNavBar = (menu) => {
     const newRouteParent = data.route.split("/")[1];
     let categoryTitle = "";
@@ -160,6 +166,11 @@ const Header = ({
   //
   //
   //
+  //
+  //
+  //
+  //
+  //
   useEffect(() => {
     const handleScroll = () => {
       const specificElement = document.getElementById("ad_make_sticky");
@@ -187,7 +198,6 @@ const Header = ({
 
     changeHeight();
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
