@@ -8,6 +8,7 @@ import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
 import { Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject } from "../js/main";
 import ArticleListView_1 from "../components/article-listing/ArticleListView_1";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const NewsTrendingPage = ({
   state,
@@ -232,7 +233,16 @@ const NewsTrendingPage = ({
     return (
       <div className="post_block_2_right_bar_parent_1">
         <div className="ad_square_1"></div>
-        <div className="magazine_topNews_parent_1">
+
+        <SidebarListingWithImages
+          title={sideTitle}
+          link={sideTitleLink}
+          postsSet={sidePosts}
+          WP_SiteUrl={WP_SiteUrl}
+          postsSet_categoryID={categoryID}
+        />
+
+        {/* <div className="magazine_topNews_parent_1">
           <Link link={sideTitleLink}>
             <div className="magazine_topNews_header_1">
               <span className="magazine_topNews_headerText_1">{sideTitle}</span>
@@ -310,7 +320,7 @@ const NewsTrendingPage = ({
               ))}
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     );
   };
@@ -354,85 +364,15 @@ const NewsTrendingPage = ({
             </div>
           </div>
         </div>
-        <div className="magazine_topNews_parent_1">
-          <Link link={sideTitleLink}>
-            <div className="magazine_topNews_header_1">
-              <span className="magazine_topNews_headerText_1">{sideTitle}</span>
-              <span className="magazine_topNews_icon_1">
-                <FaGreaterThan />
-              </span>
-            </div>
-          </Link>
 
-          {sidePosts !== null ? (
-            <>
-              {sidePosts !== false ? (
-                <>
-                  {sidePosts.length !== 0 ? (
-                    <>
-                      {sidePosts.slice(7, 13)?.map((post, index) => {
-                        const customPost = CustomWPRestServicePostObject(
-                          WP_SiteUrl,
-                          post,
-                          categoryID
-                        );
-                        //
-                        //
-                        //
-                        //
-                        //
-                        return (
-                          <div
-                            className="magazine_topNews_container_1"
-                            key={index}
-                          >
-                            <Link link={customPost.slug}>
-                              <h6 dangerouslySetInnerHTML={customPost.title} />
-                            </Link>
-                            <CategoryDateText
-                              categoryText={customPost.categoryText}
-                              dateText={customPost.date}
-                            />
-                          </div>
-                        );
-                      })}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>NO NEW POSTS FOUND</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="spinner_parent_1">
-                  <h1>FAILED TO FETCH POSTS</h1>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="post_block_3_posts_container_1">
-              {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                <div className="placeholder_child_7_parent_parent" key={n}>
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_7_parent"
-                  >
-                    <Placeholder
-                      xs={7}
-                      bg="dark"
-                      className="placeholder_child_7_1"
-                    />
-                    <Placeholder
-                      xs={4}
-                      bg="dark"
-                      className="placeholder_child_7_1"
-                    />
-                  </Placeholder>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <SidebarListingWithImages
+          title={sideTitle}
+          link={sideTitleLink}
+          postsSet={sidePosts}
+          WP_SiteUrl={WP_SiteUrl}
+          postsSet_categoryID={categoryID}
+        />
+
         <div className="ad_square_1"></div>
       </div>
     );

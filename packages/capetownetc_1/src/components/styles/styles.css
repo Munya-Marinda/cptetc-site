@@ -537,6 +537,7 @@ CAROUSEL
 
 .header_carousel_header_1 > h6 {
   font-size: 12px;
+  font-weight: bold;
 }
 
 .header_carousel_parent_1 {
@@ -1468,7 +1469,7 @@ FULL WIDTH POST
 
 .topGuides_container_1 {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1489,8 +1490,11 @@ FULL WIDTH POST
 }
 
 .topGuides_textContainer_1 > a {
-  text-decoration: none;
+  height: 39px;
+  display: block;
   color: black;
+  overflow-y: hidden;
+  text-decoration: none;
 }
 
 .magazine_topNews_container_1 > a:hover {

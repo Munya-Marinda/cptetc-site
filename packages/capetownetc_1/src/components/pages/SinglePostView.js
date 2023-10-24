@@ -8,6 +8,8 @@ import ArticleIcons from "../components/ArticleIcons";
 import CategoryDateText from "../components/CategoryDateText";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import { Carousel } from "react-bootstrap";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
+import ArticleListView_3 from "../components/article-listing/ArticleListView_3";
 
 const SinglePostView = ({
   state,
@@ -107,8 +109,7 @@ const SinglePostView = ({
   //
   //
   return (
-    <main className="homepage_main_parent_1"> 
-
+    <main className="homepage_main_parent_1">
       <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_1">
         <div className="ad_vertical_1_parent">
           <div
@@ -172,201 +173,24 @@ const SinglePostView = ({
                 }
               />
 
-              <div className="post_block_2_posts_container_2 content_spacing_top_2">
-                {postsSet1 !== null ? (
-                  <>
-                    {postsSet1 !== false ? (
-                      <>
-                        {postsSet1.length !== 0 ? (
-                          <>
-                            {postsSet1.slice(2, 7).map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID,
-                                null,
-                                120
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_2_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_2_postImg_container_1">
-                                    <img
-                                      alt=""
-                                      src={customPost.imgUrl}
-                                      className="post_block_2_postImg_2"
-                                    />
-                                    <ArticleIcons
-                                      commentsLink={customPost.commentsSlug}
-                                      cameraLink={customPost.slug}
-                                    />
-                                  </div>
-                                  <div className="post_block_2_postText_1">
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                    <CategoryDateText
-                                      dateText={customPost.date}
-                                      categoryText={customPost.categoryText}
-                                    />
-
-                                    <div
-                                      dangerouslySetInnerHTML={
-                                        customPost.excerpt
-                                      }
-                                    />
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    {["", "", "", "", ""].map((m, n) => (
-                      <div className="placeholder_child_4_parent">
-                        <Placeholder key={n} animation="glow">
-                          <Placeholder
-                            xs={2}
-                            bg="dark"
-                            className="placeholder_child_4"
-                          />
-                        </Placeholder>
-                        <Placeholder
-                          key={n}
-                          animation="glow"
-                          className="width100 placeholder_child_4_parent_2"
-                        >
-                          <Placeholder
-                            xs={4}
-                            bg="dark"
-                            className="placeholder_child_4_1"
-                          />
-                          <br />
-                          <Placeholder xs={2} bg="dark" />
-                          <br />
-                          <Placeholder xs={9} bg="dark" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" />
-                          <br />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </>
-                )}
-              </div>
+              <ArticleListView_3
+                title={"Related Articles"} 
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
             </div>
 
             <div className="post_block_2_right_bar_parent_1">
               <div className="ad_square_1"></div>
 
-              <div className="magazine_topNews_parent_1">
-                <Link link="/news/">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Top News
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
-                    </span>
-                  </div>
-                </Link>
-                {postsSet1 !== null ? (
-                  <>
-                    {postsSet1 !== false ? (
-                      <>
-                        {postsSet1.length !== 0 ? (
-                          <>
-                            {postsSet1.slice(0, 5)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="magazine_topNews_container_1"
-                                  key={index}
-                                >
-                                  <Link link={customPost.slug}>
-                                    <h6
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1">
-                    {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                      <div
-                        className="placeholder_child_7_parent_parent"
-                        key={n}
-                      >
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_7_parent"
-                        >
-                          <Placeholder
-                            xs={7}
-                            bg="dark"
-                            className="placeholder_child_7_1"
-                          />
-                          <Placeholder
-                            xs={4}
-                            bg="dark"
-                            className="placeholder_child_7_1"
-                          />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <SidebarListingWithImages
+                link={"/news/"}
+                title={"Top News"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
 
               <div className="magazine_preview_parent_1">
                 <img

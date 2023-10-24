@@ -349,6 +349,8 @@ const NewsCategoryPage = ({
               </div>
 
               <SidebarListingWithImages
+                title={"Top News"}
+                link={"/news/"}
                 postsSet={postsSet2}
                 postsSet_categoryID={headerData.id}
                 WP_SiteUrl={WP_SiteUrl}
