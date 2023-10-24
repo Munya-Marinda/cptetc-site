@@ -491,7 +491,7 @@ const ThingsToDoTrendingPage = ({
                       Top Things To Do
                     </span>
                     <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
+                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
                     </span>
                   </div>
                 </Link>
@@ -832,7 +832,7 @@ const ThingsToDoTrendingPage = ({
                       Top Things To Do
                     </span>
                     <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
+                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
                     </span>
                   </div>
                 </Link>
@@ -1693,7 +1693,7 @@ const ThingsToDoTrendingPage = ({
                       Top Things To Do
                     </span>
                     <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
+                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
                     </span>
                   </div>
                 </Link>

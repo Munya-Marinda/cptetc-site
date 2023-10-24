@@ -130,7 +130,7 @@ const ArticleListView_2 = ({
         </div>
       )}
 
-      <div className="ad_horizontal_2_parent content_spacing_top_2">
+      <div className="ad_horizontal_2_parent content_spacing_top_3">
         <h6 className="ad_text_1">ADVERTISEMENT</h6>
         <div className="ad_horizontal_2"></div>
       </div>

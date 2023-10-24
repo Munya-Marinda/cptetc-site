@@ -20,7 +20,7 @@ const SidebarListingWithOutImages = ({
         <div className="magazine_topNews_header_1">
           <span className="magazine_topNews_headerText_1">{title}</span>
           <span className="magazine_topNews_icon_1">
-            <FaAngleRight size={25} />
+            <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
           </span>
         </div>
       </Link>
