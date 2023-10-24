@@ -463,7 +463,7 @@ const Header = ({
             )}
           </div>
           <div className="nav_search_container_1">
-            <FaSearch size={20} className="youtube_icon_1" />
+            <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/search-icon-0.svg" />
           </div>
         </div>
       </div>

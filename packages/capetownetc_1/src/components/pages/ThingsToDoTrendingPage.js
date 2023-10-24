@@ -9,6 +9,8 @@ import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
 import FullScreenCategories from "../components/FullScreenCategories";
 import { Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject } from "../js/main";
+import ArticleListView_2 from "../components/article-listing/ArticleListView_2";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const ThingsToDoTrendingPage = ({
   state,
@@ -268,14 +270,14 @@ const ThingsToDoTrendingPage = ({
   //
   return (
     <>
-      {/* <FullWidthPost
+      <FullWidthPost
         title={"The 20 Best Places To Travel to in South Africa"}
         link={"#the-20-best-places-to-travel-to-in-south-africa"}
-      /> */}
+      />
 
       <div id="sticky_here"></div>
 
-      <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_1">
+      <div className="post_block_1_parent_1 content_spacing_top_2">
         <div className="ad_vertical_1_parent">
           <div
             className="ad_vertical_1"
@@ -298,293 +300,25 @@ const ThingsToDoTrendingPage = ({
 
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
-            <div className="post_block_2_header_container_1">
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Food & Drink</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/food-and-drink/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/food-and-drink/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-              {postsSet1 !== null ? (
-                <>
-                  {postsSet1 !== false ? (
-                    <>
-                      {postsSet1.length !== 0 ? (
-                        <>
-                          {postsSet1.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet1_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet1 !== null ? (
-                  <>
-                    {postsSet1 !== false ? (
-                      <>
-                        {postsSet1.length !== 0 ? (
-                          <>
-                            {postsSet1.slice(1, 10)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+            <ArticleListView_2
+              title={"Food & Drink"}
+              link_1={"/things-to-do/food-and-drink/"}
+              link_2={"/things-to-do/food-and-drink/"}
+              postsSet={postsSet1}
+              WP_SiteUrl={WP_SiteUrl}
+              postsSet_categoryID={postsSet1_categoryID}
+            />
+
             <div className="post_block_2_right_bar_parent_1">
               <div className="ad_square_1"></div>
-              <div className="magazine_topNews_parent_1">
-                <Link link="#lorum-ipsum">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Top Things To Do
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
-                    </span>
-                  </div>
-                </Link>
-                <div className="topGuides_parent_1">
-                  {postsSet1 !== null ? (
-                    <>
-                      {postsSet1 !== false ? (
-                        <>
-                          {postsSet1.length !== 0 ? (
-                            <>
-                              {postsSet1.slice(10, 15)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet1_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                      <ArticleIcons
-                                        showCategory={false}
-                                        showCamera={false}
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                      <CategoryDateText
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+
+              <SidebarListingWithImages
+                link={"/things-to-do/"}
+                title={"Top Things To Do"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
             </div>
           </div>
         </div>
@@ -615,192 +349,15 @@ const ThingsToDoTrendingPage = ({
       <div className="post_block_1_parent_1 content_spacing_top_1 content_spacing_bottom_1">
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
-            <div className="post_block_2_header_container_1">
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Travel & Stay</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/travel/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/travel/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-              {postsSet2 !== null ? (
-                <>
-                  {postsSet2 !== false ? (
-                    <>
-                      {postsSet2.length !== 0 ? (
-                        <>
-                          {postsSet2.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet2_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
+            <ArticleListView_2
+              title={"Travel & Stay"}
+              link_1={"/things-to-do/travel/"}
+              link_2={"/things-to-do/travel/"}
+              postsSet={postsSet2}
+              WP_SiteUrl={WP_SiteUrl}
+              postsSet_categoryID={postsSet2_categoryID}
+            />
 
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
-
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet2 !== null ? (
-                  <>
-                    {postsSet2 !== false ? (
-                      <>
-                        {postsSet2.length !== 0 ? (
-                          <>
-                            {postsSet2.slice(1, 10)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet2_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
             <div className="post_block_2_right_bar_parent_1">
               <div className="magazine_preview_parent_1">
                 <img
@@ -825,107 +382,14 @@ const ThingsToDoTrendingPage = ({
                   </div>
                 </div>
               </div>
-              <div className="magazine_topNews_parent_1">
-                <Link link="#lorum-ipsum">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Top Things To Do
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
-                    </span>
-                  </div>
-                </Link>
-                <div className="topGuides_parent_1">
-                  {postsSet2 !== null ? (
-                    <>
-                      {postsSet2 !== false ? (
-                        <>
-                          {postsSet2.length !== 0 ? (
-                            <>
-                              {postsSet2.slice(10, 15)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet2_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                      <ArticleIcons
-                                        showCategory={false}
-                                        showCamera={false}
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                      <CategoryDateText
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+
+              <SidebarListingWithImages
+                link={"/things-to-do/"}
+                title={"Top Things To Do"}
+                postsSet={postsSet2}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet2_categoryID}
+              />
             </div>
           </div>
         </div>
@@ -940,750 +404,43 @@ const ThingsToDoTrendingPage = ({
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_1">
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Family</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/family/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/family/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-              {postsSet3 !== null ? (
-                <>
-                  {postsSet3 !== false ? (
-                    <>
-                      {postsSet3.length !== 0 ? (
-                        <>
-                          {postsSet3.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet3_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
+              <ArticleListView_2
+                title={"Family"}
+                link_1={"/things-to-do/family/"}
+                link_2={"/things-to-do/family/"}
+                postsSet={postsSet3}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet3_categoryID}
+              />
 
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
+              <ArticleListView_2
+                title={"Adventure"}
+                link_1={"/things-to-do/adventure/"}
+                link_2={"/things-to-do/adventure/"}
+                postsSet={postsSet4}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet4_categoryID}
+              />
 
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet3 !== null ? (
-                  <>
-                    {postsSet3 !== false ? (
-                      <>
-                        {postsSet3.length !== 0 ? (
-                          <>
-                            {postsSet3.slice(1, 4)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet3_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <ArticleListView_2
+                title={"Events & Entertainment"}
+                link_1={"/things-to-do/entertainment/"}
+                link_2={"/things-to-do/entertainment/"}
+                postsSet={postsSet5}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet5_categoryID}
+              />
 
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Adventure</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/adventure/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/adventure/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-              {postsSet4 !== null ? (
-                <>
-                  {postsSet4 !== false ? (
-                    <>
-                      {postsSet4.length !== 0 ? (
-                        <>
-                          {postsSet4.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet4_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
-
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
-
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet4 !== null ? (
-                  <>
-                    {postsSet4 !== false ? (
-                      <>
-                        {postsSet4.length !== 0 ? (
-                          <>
-                            {postsSet4.slice(1, 4)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet4_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">
-                  Events & Entertainment
-                </span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/entertainment/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/entertainment/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-
-              {postsSet5 !== null ? (
-                <>
-                  {postsSet5 !== false ? (
-                    <>
-                      {postsSet5.length !== 0 ? (
-                        <>
-                          {postsSet5.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet5_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
-
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
-
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet5 !== null ? (
-                  <>
-                    {postsSet5 !== false ? (
-                      <>
-                        {postsSet5.length !== 0 ? (
-                          <>
-                            {postsSet5.slice(1, 4)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet5_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Arts & Culture</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/things-to-do/culture/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="#arts&-culture-the-latest"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
-                  </Link>
-                </div>
-              </div>
-
-              {postsSet6 !== null ? (
-                <>
-                  {postsSet6 !== false ? (
-                    <>
-                      {postsSet6.length !== 0 ? (
-                        <>
-                          {postsSet6.slice(0, 1)?.map((post, index) => {
-                            const customPost = CustomWPRestServicePostObject(
-                              WP_SiteUrl,
-                              post,
-                              postsSet6_categoryID,
-                              null,
-                              120
-                            );
-                            //
-                            //
-                            //
-                            //
-                            //
-                            return (
-                              <div
-                                key={index}
-                                className="post_block_2_posts_container_1"
-                              >
-                                <div className="post_block_2_postImg_container_1">
-                                  <img
-                                    src={customPost.imgUrl}
-                                    alt=""
-                                    className="post_block_2_featureImg_1"
-                                  />
-                                  <ArticleIcons />
-                                </div>
-                                <div className="post_block_3_featuredPostText_parent_1">
-                                  <Link link={customPost.slug}>
-                                    <h1
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={customPost.categoryText}
-                                    dateText={customPost.date}
-                                  />
-
-                                  <div
-                                    dangerouslySetInnerHTML={customPost.excerpt}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>NO NEW POSTS FOUND</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>FAILED TO FETCH POSTS</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="placeholder_child_5_parent_div">
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_5_parent"
-                  >
-                    <Placeholder
-                      xs={2}
-                      bg="dark"
-                      className="placeholder_child_5"
-                    />
-                  </Placeholder>
-                  <Placeholder animation="glow" className="width100">
-                    <Placeholder bg="dark" className="placeholder_child_5_1" />
-                    <br />
-                    <Placeholder xs={4} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                    <br />
-                    <Placeholder xs={8} bg="dark" className="" />
-                  </Placeholder>
-                </div>
-              )}
-
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet6 !== null ? (
-                  <>
-                    {postsSet6 !== false ? (
-                      <>
-                        {postsSet6.length !== 0 ? (
-                          <>
-                            {postsSet6.slice(1, 4)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet6_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="post_block_3_post_container_1"
-                                  key={index}
-                                >
-                                  <div className="post_block_3_postImg_container_1">
-                                    <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                    />
-                                    <ArticleIcons showCategory={false} />
-                                  </div>
-                                  <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <ArticleListView_2
+                title={"Arts & Culture"}
+                link_1={"/things-to-do/culture/"}
+                link_2={"/things-to-do/culture/"}
+                postsSet={postsSet6}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryID={postsSet6_categoryID}
+              />
             </div>
+
             <div className="post_block_2_right_bar_parent_1">
               <div className="ad_square_1"></div>
               <div className="magazine_topNews_parent_1">
@@ -1693,7 +450,7 @@ const ThingsToDoTrendingPage = ({
                       Top Things To Do
                     </span>
                     <span className="magazine_topNews_icon_1">
-                    <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
+                      <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
                     </span>
                   </div>
                 </Link>
@@ -1795,10 +552,8 @@ const ThingsToDoTrendingPage = ({
         </div>
       </div>
 
-      <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_1">
-        <div className="ad_vertical_1_parent">
-          <div className="ad_vertical_1"></div>
-        </div>
+      <div className="post_block_1_parent_1 content_spacing_bottom_1">
+        <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
@@ -1821,7 +576,7 @@ const ThingsToDoTrendingPage = ({
                 </div>
               </div>
 
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
+              <div className="post_block_3_posts_container_1 content_spacing_top_3">
                 {postsSet3 !== null ? (
                   <>
                     {postsSet3 !== false ? (
@@ -1859,6 +614,7 @@ const ThingsToDoTrendingPage = ({
                                     />
                                     <Link link={customPost.slug}>
                                       <h1
+                                        style={{ marginTop: "10px" }}
                                         dangerouslySetInnerHTML={
                                           customPost.title
                                         }
@@ -1905,9 +661,7 @@ const ThingsToDoTrendingPage = ({
             </div>
           </div>
         </div>
-        <div className="ad_vertical_1_parent">
-          <div className="ad_vertical_1"></div>
-        </div>
+        <div className="ad_vertical_1_parent"></div>
       </div>
     </>
   );

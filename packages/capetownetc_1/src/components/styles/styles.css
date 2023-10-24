@@ -401,8 +401,8 @@ WIDE NAV
   transform: translateY(-15px);
 }
 
-.nav_search_container_1 > svg {
-  color: white;
+.nav_search_container_1 > img {
+  width: 17px;
 }
 
 /* 
@@ -1133,7 +1133,6 @@ HOME POST BLOCK 1
   padding: 0px;
   color: black;
   font-weight: bold;
-  /* line-height: 24px; */
   font-family: "Roboto";
 }
 
