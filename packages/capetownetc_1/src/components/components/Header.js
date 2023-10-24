@@ -463,7 +463,7 @@ const Header = ({
             )}
           </div>
           <div className="nav_search_container_1">
-            <FaSearch className="youtube_icon_1" />
+            <FaSearch size={20} className="youtube_icon_1" />
           </div>
         </div>
       </div>
