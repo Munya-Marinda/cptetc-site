@@ -20,7 +20,10 @@ const ArticleIcons = ({
         {categoryText === undefined ? (
           ""
         ) : (
-          <Link link={categoryLink !== undefined ? categoryLink : "#category"}>
+          <Link
+            link={categoryLink !== undefined ? categoryLink : "#category"}
+            style={{ transform: "translateY(6px)" }}
+          >
             <div className="category_container_1">
               <span>
                 {categoryText !== undefined && categoryText.toUpperCase()}
