@@ -1108,9 +1108,9 @@ HOME POST BLOCK 1
 }
 
 .post_block_3_postText_1 > a {
-  height: 65px;
+  /* height: 65px; */
   display: block;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .post_block_3_postText_1 > a,
@@ -1471,8 +1471,8 @@ FULL WIDTH POST
   margin-bottom: 15px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .post_block_3_postImg_2 {
@@ -1481,7 +1481,12 @@ FULL WIDTH POST
 }
 
 .topGuides_textContainer_1 {
+  display: flex;
   padding-left: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: var(--post_block_3_postImg_2_height);
 }
 
 .topGuides_textContainer_1 > a:hover {
