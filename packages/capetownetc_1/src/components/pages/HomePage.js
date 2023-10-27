@@ -13,6 +13,7 @@ import ArticleListView_1 from "../components/article-listing/ArticleListView_1";
 import ArticleListView_2 from "../components/article-listing/ArticleListView_2";
 import SidebarListingWithOutImages from "../components/sidebars/SidebarListingWithOutImages";
 import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
+import Mobile_ArticleListView_1 from "../components/article-listing/Mobile_ArticleListView_1";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -415,104 +416,14 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             <div className="ad_horizontal_2"></div>
           </div>
 
-          <div className="post_block_2_posts_container_2 content_spacing_top_3 hide_on_desktop">
-            {postsSet1 !== null ? (
-              <>
-                {postsSet1 !== false ? (
-                  <>
-                    {postsSet1.length !== 0 ? (
-                      <>
-                        {postsSet1.slice(1, 7).map((post, index) => {
-                          const customPost = CustomWPRestServicePostObject(
-                            WP_SiteUrl,
-                            post,
-                            postsSet1_categoryID
-                          );
-                          //
-                          //
-                          //
-                          //
-                          //
-                          return (
-                            <div
-                              className="post_block_2_post_container_1"
-                              key={index}
-                            >
-                              <div className="post_block_2_postImg_container_1">
-                                <img
-                                  alt=""
-                                  src={customPost.imgUrl}
-                                  className="post_block_2_postImg_2"
-                                />
-                                <ArticleIcons
-                                  commentsLink={customPost.commentsSlug}
-                                  cameraLink={customPost.slug}
-                                />
-                              </div>
-                              <div className="post_block_2_postText_1">
-                                <Link link={customPost.slug}>
-                                  <h1
-                                    dangerouslySetInnerHTML={customPost.title}
-                                  />
-                                </Link>
-                                <CategoryDateText
-                                  dateText={customPost.date}
-                                  categoryText={customPost.categoryText}
-                                />
-                                <div
-                                  className="post_block_2_postText_content_parent_1"
-                                  dangerouslySetInnerHTML={customPost.excerpt}
-                                />
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>NO NEW POSTS FOUND</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="spinner_parent_1">
-                    <h1>FAILED TO FETCH POSTS</h1>
-                  </div>
-                )}
-              </>
-            ) : (
-              <>
-                {["", "", "", "", ""].map((m, n) => (
-                  <div className="placeholder_child_4_parent" key={n}>
-                    <Placeholder animation="glow">
-                      <Placeholder
-                        xs={2}
-                        bg="dark"
-                        className="placeholder_child_4"
-                      />
-                    </Placeholder>
-                    <Placeholder
-                      animation="glow"
-                      className="width100 placeholder_child_4_parent_2"
-                    >
-                      <Placeholder
-                        xs={4}
-                        bg="dark"
-                        className="placeholder_child_4_1"
-                      />
-                      <br />
-                      <Placeholder xs={2} bg="dark" />
-                      <br />
-                      <Placeholder xs={9} bg="dark" />
-                      <br />
-                      <Placeholder xs={8} bg="dark" />
-                      <br />
-                    </Placeholder>
-                  </div>
-                ))}
-              </>
-            )}
-          </div>
+          <Mobile_ArticleListView_1
+            slice_end={7}
+            slice_start={1}
+            postsSet={postsSet1}
+            WP_SiteUrl={WP_SiteUrl}
+            postsSet_categoryTitle={"NEWS"}
+            postsSet1_categoryID={postsSet1_categoryID}
+          />
         </div>
 
         <div className="ad_vertical_1_parent">
@@ -652,6 +563,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               link_2={"/things-to-do/"}
               postsSet={postsSet3}
               WP_SiteUrl={WP_SiteUrl}
+              postsSet_categoryTitle={"THINGS TO DO"}
               postsSet_categoryID={postsSet3_categoryID}
             />
 

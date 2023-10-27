@@ -1,10 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
 import CategoryDateText from "../CategoryDateText";
 import ArticleIcons from "../ArticleIcons";
 import { Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject } from "../../js/main";
+import Mobile_ArticleListView_1 from "./Mobile_ArticleListView_1";
 
 const ArticleListView_2 = ({
   postsSet,
@@ -15,6 +16,18 @@ const ArticleListView_2 = ({
   link_1,
   link_2,
 }) => {
+  //
+  //
+
+  const [categoryText, setCategoryText] = useState("No category");
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
   return (
     <div
       className="post_block_2_header_container_1"
@@ -135,7 +148,7 @@ const ArticleListView_2 = ({
         <div className="ad_horizontal_2"></div>
       </div>
 
-      <div className="post_block_3_posts_container_1 content_spacing_top_2">
+      <div className="post_block_3_posts_container_1 content_spacing_top_2 hide_on_mobile">
         {postsSet !== null ? (
           <>
             {postsSet !== false ? (
@@ -220,6 +233,15 @@ const ArticleListView_2 = ({
           </div>
         )}
       </div>
+
+      <Mobile_ArticleListView_1
+        slice_end={10}
+        slice_start={1}
+        postsSet={postsSet}
+        WP_SiteUrl={WP_SiteUrl}
+        postsSet1_categoryID={postsSet_categoryID}
+        postsSet_categoryTitle={postsSet_categoryTitle}
+      />
     </div>
   );
 };
