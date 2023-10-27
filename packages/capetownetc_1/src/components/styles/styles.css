@@ -1,6 +1,6 @@
 /* VARIABLES */
 :root {
-  --maxContentWidth: 1180px;
+  --maxContentWidth: 945px;
   /* COLORS */
   /* --pinkish_color: #911c12ff; */
   --pinkish_color: #ef4050ff;
@@ -25,19 +25,20 @@
   --content_spacing_top_3: 20px;
   --content_spacing_bottom_1: 70px;
   --content_spacing_bottom_2: 35px;
-  --post_block_1_featureImg_1_width: 784.556px;
-  --post_block_1_featureImg_1_height: 519.643px;
-  --post_block_1_featureImgs_1_width: 380.434px;
-  --post_block_1_featureImgs_1_height: 251.975px;
-  --post_block_2_header_parent_1_width: 891.19px;
-  --post_block_2_featureImg_1_width: 435.226px;
-  --post_block_2_featureImg_1_height: 303.87px;
-  --post_block_2_featureImg_2_width: 546.968px;
-  --post_block_2_featureImg_2_height: 353.916px;
+
+  --post_block_1_featureImg_1_width: 627.259px;
+  --post_block_1_featureImg_1_height: 415.458px;
+  --post_block_1_featureImgs_1_width: 304.163px;
+  --post_block_1_featureImgs_1_height: 201.458px;
+  --post_block_2_featureImg_1_width: 322.814px;
+  --post_block_2_featureImg_1_height: 225.385px;
+  --post_block_2_header_parent_1_width: 661.01px;
   --post_block_2_postImg_2_width: 239.728px;
   --post_block_2_postImg_2_height: 137.57px;
-  --post_block_3_postImg_1_width: 283px;
-  --post_block_3_postImg_1_height: 177.653px;
+  --post_block_2_featureImg_2_width: 407.312px;
+  --post_block_2_featureImg_2_height: 263.552px;
+  --post_block_3_postImg_1_width: 210.748px;
+  --post_block_3_postImg_1_height: 132.298px;
   --post_block_3_postImg_2_width: 90px;
   --post_block_3_postImg_2_height: 67px;
   --videos_previewImg_1_width: 301px;
@@ -2877,7 +2878,7 @@ svg {
 //
 Media queries for content width and
 */
-@media only screen and (max-width: 1305px) {
+/* @media only screen and (max-width: 1305px) {
   .header_carousel_header_parent_1,
   .ad_vertical_1 {
     display: none;
@@ -2934,4 +2935,4 @@ Media queries for content width and
   .footer_container_2_1 {
     max-width: fit-content;
   }
-}
+} */
