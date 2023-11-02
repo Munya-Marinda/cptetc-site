@@ -301,7 +301,7 @@ const SubscribePage = ({
                 </div>
               </div>
               <div className="subscribe_recent_issues_parent_1 content_spacing_top_2">
-                <div className="subscribe_recent_issues_container_1">
+                <div className="subscribe_recent_issues_container_1 padding_on_mobile">
                   <span className="subscribe_recent_issues_text_1">
                     <b>Recent Issues</b>
                   </span>
@@ -313,6 +313,7 @@ const SubscribePage = ({
                     </Link>
                   </div>
                 </div>
+
                 <div className="subscribe_recent_issues_parent_2 content_spacing_top_2">
                   {issuesChuncksSet1 !== null ? (
                     <>

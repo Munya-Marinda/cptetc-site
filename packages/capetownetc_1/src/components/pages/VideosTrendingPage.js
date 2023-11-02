@@ -138,7 +138,7 @@ const VideosTrendingPage = ({
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
-              <div className="post_block_2_header_parent_2">
+              <div className="post_block_2_header_parent_2 padding_on_mobile">
                 <span className="post_block_2_header_1">News</span>
                 <div className="post_block_2_headerLinks_parent_1">
                   <Link
@@ -270,7 +270,7 @@ const VideosTrendingPage = ({
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
-              <div className="post_block_2_header_parent_2">
+              <div className="post_block_2_header_parent_2 padding_on_mobile">
                 <span className="post_block_2_header_1">Things To Do</span>
                 <div className="post_block_2_headerLinks_parent_1">
                   <Link

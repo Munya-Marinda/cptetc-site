@@ -121,7 +121,7 @@ const VideosCategeoryPage = ({
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_2">
-              <div className="post_block_2_header_parent_2">
+              <div className="post_block_2_header_parent_2 padding_on_mobile">
                 <span className="post_block_2_header_1">
                   Videos: {headerData.title}
                 </span>
