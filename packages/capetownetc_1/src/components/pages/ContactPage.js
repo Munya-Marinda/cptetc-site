@@ -184,6 +184,7 @@ const ContactPage = ({
 
       <div className="gray_background width100 padding_on_mobile">
         <div className="post_block_1_parent_1 content_spacing_bottom_1 content_spacing_top_1">
+          <div className="ad_vertical_1_parent"></div>
           <div className="post_block_1_parent_2">
             <h1 className="contact_page_header_1">
               More Than Just A Magazine...
@@ -363,10 +364,12 @@ const ContactPage = ({
               />
             </div>
           </div>
+          <div className="ad_vertical_1_parent"></div>
         </div>
       </div>
 
       <div className="post_block_1_parent_1 content_spacing_bottom_1 content_spacing_top_1 padding_on_mobile">
+        <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <h1 className="contact_page_header_2">Get Connected.</h1>
 
@@ -443,6 +446,7 @@ const ContactPage = ({
             info@habarimedia.com
           </h1>
         </div>
+        <div className="ad_vertical_1_parent"></div>
       </div>
     </main>
   );

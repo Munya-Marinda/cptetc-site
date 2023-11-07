@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "frontity";
-import Link from "@frontity/components/link";
-import FullWidthPost from "../components/FullWidthPost";
-import { PiChats } from "react-icons/pi";
-import {
-  FaFacebookF,
-  FaImages,
-  FaInstagram,
-  FaRegLightbulb,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
 
 const RateCardPage = ({
   state,

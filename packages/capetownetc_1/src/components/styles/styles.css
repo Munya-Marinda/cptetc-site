@@ -18,8 +18,8 @@
   --ad_horizontal_height_2: 76px;
   --ad_vertical_width_1: 174px;
   --ad_vertical_height_1: 696px;
-  --ad_square_width_1: 267px;
-  --ad_square_height_1: 267px;
+  --ad_square_width_1: 300px;
+  --ad_square_height_1: 300px;
   --ad_gray_1: rgba(232, 233, 234, 0.938);
   /* MALICOUS */
   --content_spacing_top_1: 70px;
@@ -31,19 +31,19 @@
   --post_block_1_featureImg_1_height: 519.643px;
   --post_block_1_featureImgs_1_width: 380.434px;
   --post_block_1_featureImgs_1_height: 251.975px;
-  --post_block_2_header_parent_1_width: 891.19px;
-  --post_block_2_featureImg_1_width: 435.226px;
-  --post_block_2_featureImg_1_height: 303.87px;
-  --post_block_2_featureImg_2_width: 546.968px;
-  --post_block_2_featureImg_2_height: 353.916px;
+  --post_block_2_header_parent_1_width: 861.072px;
+  --post_block_2_featureImg_1_width: 420.581px;
+  --post_block_2_featureImg_1_height: 293.645px;
+  --post_block_2_featureImg_2_width: 484.746px;
+  --post_block_2_featureImg_2_height: 313.655px;
   --post_block_2_postImg_2_width: 239.728px;
   --post_block_2_postImg_2_height: 137.57px;
-  --post_block_3_postImg_1_width: 283px;
-  --post_block_3_postImg_1_height: 177.653px;
+  --post_block_3_postImg_1_width: 274.583px;
+  --post_block_3_postImg_1_height: 172.372px;
   --post_block_3_postImg_2_width: 90px;
   --post_block_3_postImg_2_height: 67px;
-  --videos_previewImg_1_width: 301px;
-  --videos_previewImg_1_height: 184px;
+  --videos_previewImg_1_width: 376.284px;
+  --videos_previewImg_1_height: 236.216px;
   --full_screen_categories_width_height: calc(125vw / 7);
 }
 
@@ -367,7 +367,7 @@ WIDE NAV
 }
 
 .nav_wide_links_parent_1 {
-  width: 60%;
+  width: 52%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -1163,7 +1163,7 @@ HOME POST BLOCK 2 - RIGHT BAR
 .post_block_2_right_bar_parent_1 {
   width: 100%;
   display: flex;
-  max-width: 268.816px;
+  max-width: 300px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -1176,7 +1176,7 @@ HOME POST BLOCK 2 - RIGHT BAR
 }
 
 .magazine_preview_img_1 {
-  width: 268.816px;
+  width: 300px;
   height: 321px;
 }
 
@@ -2906,15 +2906,17 @@ Media queries for content width and
     --post_block_1_featureImg_1_height: 415.458px;
     --post_block_1_featureImgs_1_width: 304.163px;
     --post_block_1_featureImgs_1_height: 201.458px;
-    --post_block_2_featureImg_1_width: 322.814px;
-    --post_block_2_featureImg_1_height: 225.385px;
-    --post_block_2_header_parent_1_width: 661.01px;
+    --post_block_2_featureImg_1_width: 307.758px;
+    --post_block_2_featureImg_1_height: 214.874px;
+    --post_block_2_header_parent_1_width: 630.277px;
     --post_block_2_postImg_2_width: 239.728px;
     --post_block_2_postImg_2_height: 137.57px;
     --post_block_2_featureImg_2_width: 407.312px;
     --post_block_2_featureImg_2_height: 263.552px;
     --post_block_3_postImg_1_width: 210.748px;
     --post_block_3_postImg_1_height: 132.298px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
   }
   .post_block_3_featuredPostText_parent_1,
   .post_block_2_postText_1 {
@@ -2941,6 +2943,8 @@ Media queries for content width and
     --post_block_2_featureImg_2_height: 263.552px;
     --post_block_3_postImg_1_width: 210.748px;
     --post_block_3_postImg_1_height: 132.298px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
   }
   .post_block_3_featuredPostText_parent_1,
   .post_block_2_postText_1 {
