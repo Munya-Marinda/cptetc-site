@@ -1,7 +1,7 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "fff86bc02b40e5002992",
+  "hash": "49b156f74cd01a07a69e",
   "publicPath": "",
   "outputPath": "C:\\repos\\capetownetc\\build\\static",
   "assetsByChunkName": {
@@ -10,7 +10,7 @@
   "assets": [
     {
       "name": "capetownetc.module.js",
-      "size": 31105934,
+      "size": 31109841,
       "chunks": [
         "capetownetc"
       ],
@@ -18,7 +18,7 @@
         "capetownetc"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     }
   ],
   "filteredAssets": 0,

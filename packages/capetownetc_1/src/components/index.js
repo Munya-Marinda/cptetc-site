@@ -59,8 +59,8 @@ const Root = ({ state }) => {
     setFormOpen(bool);
   };
 
-  const change_headerStickyContainerHeight = (newHeight) => {
-    setHeaderStickyContainerHeight(newHeight);
+  const change_headerStickyContainerHeight = (newHeight) => { 
+    setHeaderStickyContainerHeight(newHeight + 20);
   };
 
   const change_headerIsSticky = (isSticky) => {

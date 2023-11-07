@@ -122,6 +122,11 @@ body {
   height: var(--ad_vertical_height_1);
   z-index: 999;
   /* display: none; */
+  /* IMAGE */
+  /* background-image: url("https://ambassador.daddysdeals.co.za/features/capetownetc-assets/vertical-ad-0.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
 }
 
 .ad_horizontal_2_parent {
@@ -1562,10 +1567,14 @@ VIDEOS
 */
 
 .footer_parent_1 {
+  left: 0px;
+  z-index: 1000;
+  bottom: 0px;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  position: absolute;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-color: var(--gray_1);
 }

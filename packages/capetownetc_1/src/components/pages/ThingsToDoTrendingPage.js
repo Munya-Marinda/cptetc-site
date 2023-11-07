@@ -347,6 +347,7 @@ const ThingsToDoTrendingPage = ({
       <DaddysDealsIFrame />
 
       <div className="post_block_1_parent_1 content_spacing_top_1 content_spacing_bottom_1">
+        <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <ArticleListView_2
@@ -393,14 +394,13 @@ const ThingsToDoTrendingPage = ({
             </div>
           </div>
         </div>
+        <div className="ad_vertical_1_parent"></div>
       </div>
 
       <FullScreenCategories />
 
       <div className="post_block_1_parent_1 content_spacing_top_1">
-        <div className="ad_vertical_1_parent">
-          <div className="ad_vertical_1"></div>
-        </div>
+        <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_1">
@@ -547,9 +547,7 @@ const ThingsToDoTrendingPage = ({
             </div>
           </div>
         </div>
-        <div className="ad_vertical_1_parent">
-          <div className="ad_vertical_1"></div>
-        </div>
+        <div className="ad_vertical_1_parent"></div>
       </div>
 
       <div className="post_block_1_parent_1 content_spacing_bottom_1">
