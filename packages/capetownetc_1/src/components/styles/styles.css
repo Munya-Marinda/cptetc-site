@@ -2889,6 +2889,73 @@ svg {
 Media queries for content width and
 */
 
+@media only screen and (max-width: 1305px) {
+  .header_carousel_header_parent_1,
+  .ad_vertical_1_parent {
+    display: none;
+  }
+
+  .post_block_1_parent_1 {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1585px) and (min-width: 1301px) {
+  :root {
+    --maxContentWidth: 945px;
+    --post_block_1_featureImg_1_width: 627.259px;
+    --post_block_1_featureImg_1_height: 415.458px;
+    --post_block_1_featureImgs_1_width: 304.163px;
+    --post_block_1_featureImgs_1_height: 201.458px;
+    --post_block_2_featureImg_1_width: 307.758px;
+    --post_block_2_featureImg_1_height: 214.874px;
+    --post_block_2_header_parent_1_width: 630.277px;
+    --post_block_2_postImg_2_width: 239.728px;
+    --post_block_2_postImg_2_height: 137.57px;
+    --post_block_2_featureImg_2_width: 407.312px;
+    --post_block_2_featureImg_2_height: 263.552px;
+    --post_block_3_postImg_1_width: 210.748px;
+    --post_block_3_postImg_1_height: 132.298px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
+  }
+  .post_block_3_featuredPostText_parent_1,
+  .post_block_2_postText_1 {
+    margin-left: 23.443px;
+  }
+  .footer_container_2_1 {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  :root {
+    --maxContentWidth: 945px;
+    --post_block_1_featureImg_1_width: 627.259px;
+    --post_block_1_featureImg_1_height: 415.458px;
+    --post_block_1_featureImgs_1_width: 304.163px;
+    --post_block_1_featureImgs_1_height: 201.458px;
+    --post_block_2_featureImg_1_width: 322.814px;
+    --post_block_2_featureImg_1_height: 225.385px;
+    --post_block_2_header_parent_1_width: 661.01px;
+    --post_block_2_postImg_2_width: 239.728px;
+    --post_block_2_postImg_2_height: 137.57px;
+    --post_block_2_featureImg_2_width: 407.312px;
+    --post_block_2_featureImg_2_height: 263.552px;
+    --post_block_3_postImg_1_width: 210.748px;
+    --post_block_3_postImg_1_height: 132.298px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
+  }
+  .post_block_3_featuredPostText_parent_1,
+  .post_block_2_postText_1 {
+    margin-left: 23.443px;
+  }
+  .footer_container_2_1 {
+    max-width: fit-content;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   :root {
     --post_block_2_postImg_2_width: 35vw;
@@ -3368,15 +3435,17 @@ Media queries for content width and
   .footer_container_2_1 {
     width: 100%;
     display: flex;
+    max-width: 100%;
+    padding: 40px 10px;
+    padding: 40px 10px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 40px 10px;
     justify-content: space-between;
     max-width: calc(var(--maxContentWidth) * 1.4);
   }
 
-  .footer_container_2_1 {
-    padding: 40px 10px;
+  .footer_container_2_1_links_parent {
+    flex-direction: column;
   }
 
   /* 
@@ -3431,72 +3500,5 @@ Media queries for content width and
 
   .hide_on_desktop {
     display: block;
-  }
-}
-
-@media only screen and (max-width: 1305px) {
-  .header_carousel_header_parent_1,
-  .ad_vertical_1_parent {
-    display: none;
-  }
-
-  .post_block_1_parent_1 {
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 1585px) and (min-width: 1301px) {
-  :root {
-    --maxContentWidth: 945px;
-    --post_block_1_featureImg_1_width: 627.259px;
-    --post_block_1_featureImg_1_height: 415.458px;
-    --post_block_1_featureImgs_1_width: 304.163px;
-    --post_block_1_featureImgs_1_height: 201.458px;
-    --post_block_2_featureImg_1_width: 307.758px;
-    --post_block_2_featureImg_1_height: 214.874px;
-    --post_block_2_header_parent_1_width: 630.277px;
-    --post_block_2_postImg_2_width: 239.728px;
-    --post_block_2_postImg_2_height: 137.57px;
-    --post_block_2_featureImg_2_width: 407.312px;
-    --post_block_2_featureImg_2_height: 263.552px;
-    --post_block_3_postImg_1_width: 210.748px;
-    --post_block_3_postImg_1_height: 132.298px;
-    --videos_previewImg_1_width: 301px;
-    --videos_previewImg_1_height: 184px;
-  }
-  .post_block_3_featuredPostText_parent_1,
-  .post_block_2_postText_1 {
-    margin-left: 23.443px;
-  }
-  .footer_container_2_1 {
-    max-width: 100%;
-  }
-}
-
-@media only screen and (max-width: 1235px) {
-  :root {
-    --maxContentWidth: 945px;
-    --post_block_1_featureImg_1_width: 627.259px;
-    --post_block_1_featureImg_1_height: 415.458px;
-    --post_block_1_featureImgs_1_width: 304.163px;
-    --post_block_1_featureImgs_1_height: 201.458px;
-    --post_block_2_featureImg_1_width: 322.814px;
-    --post_block_2_featureImg_1_height: 225.385px;
-    --post_block_2_header_parent_1_width: 661.01px;
-    --post_block_2_postImg_2_width: 239.728px;
-    --post_block_2_postImg_2_height: 137.57px;
-    --post_block_2_featureImg_2_width: 407.312px;
-    --post_block_2_featureImg_2_height: 263.552px;
-    --post_block_3_postImg_1_width: 210.748px;
-    --post_block_3_postImg_1_height: 132.298px;
-    --videos_previewImg_1_width: 301px;
-    --videos_previewImg_1_height: 184px;
-  }
-  .post_block_3_featuredPostText_parent_1,
-  .post_block_2_postText_1 {
-    margin-left: 23.443px;
-  }
-  .footer_container_2_1 {
-    max-width: fit-content;
   }
 }
