@@ -2914,8 +2914,8 @@ Media queries for content width and
     --post_block_2_postImg_2_height: 137.57px;
     --post_block_2_featureImg_2_width: 407.312px;
     --post_block_2_featureImg_2_height: 263.552px;
-    --post_block_3_postImg_1_width: 210.748px;
-    --post_block_3_postImg_1_height: 132.298px;
+    --post_block_3_postImg_1_width: 200px;
+    --post_block_3_postImg_1_height: 125.55px;
     --videos_previewImg_1_width: 301px;
     --videos_previewImg_1_height: 184px;
   }
@@ -2964,6 +2964,7 @@ Media queries for content width and
     --post_block_2_featureImg_1_height: calc(
       100vw * calc(268.816px / 178.047px)
     );
+    --maxContentWidth: 100vw;
     --full_screen_categories_width_height: 80vw;
   }
 
@@ -3490,15 +3491,16 @@ Media queries for content width and
     padding: 0px 10px;
   }
 
-  /* .wp-embedded-content {
-    max-width: 95vw;
-  } */
-
   .height_250 {
     min-height: 250px;
   }
 
   .hide_on_desktop {
     display: block;
+  }
+
+  .post_block_2_header_parent_1,
+  .wide_dropdown_nav_container_1 {
+    padding: 0px 10px;
   }
 }

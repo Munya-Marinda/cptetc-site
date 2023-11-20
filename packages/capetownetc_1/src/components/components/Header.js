@@ -68,7 +68,7 @@ const Header = ({
             !newMenu || newMenu === undefined || newMenu === null ? [] : newMenu
           );
         } catch (error) {
-          console.log(error.message);
+          // console.log(error.message);
         }
       };
       fetchMenuData();
@@ -79,6 +79,7 @@ const Header = ({
   }, [menu]);
   //
   useEffect(() => {
+    console.log(menuParentTitle);
     //
     //
     const fetch1Posts = async () => {
@@ -474,7 +475,10 @@ const Header = ({
           when={
             data.route !== "/" &&
             data.route !== "/vouchers/" &&
-            data.route !== "/subscribe/"
+            data.route !== "/subscribe/" &&
+            menuParentTitle !== "home" &&
+            menuParentTitle !== null &&
+            menuParentTitle !== undefined
           }
           className="wide_dropdown_nav_parent_1"
         >

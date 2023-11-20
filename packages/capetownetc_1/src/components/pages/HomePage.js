@@ -188,8 +188,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
         const adData = await response.json();
         setAd_1(adData);
-      } catch (error) {
-        console.error("Error fetching ad 1:", error);
+      } catch (error) { 
         setAd_1(false);
       }
     };

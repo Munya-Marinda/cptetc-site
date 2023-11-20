@@ -254,7 +254,7 @@ const SubscribePage = ({
                       fontWeight: "bold",
                     }}
                   >
-                    Cape {"{Town}"} Etc
+                    Cape {"{town}"} Etc
                   </h2>
                   <h6>Month 2023</h6>
                   <p
@@ -264,14 +264,15 @@ const SubscribePage = ({
                       fontFamily: "Roboto",
                     }}
                   >
-                    Cape Etc magazine is your essential companion for
+                    Cape {"{town}"} Etc magazine is your essential companion for
                     discovering the best of the Mother City. We feature
                     top-notch art, restaurants, adventures, accommodations, and
                     much more. Consider us your key to unlocking the city and
                     its surrounding wonders. Let us guide you!
                     <br />* 9 575 ABC (Oct - Dec 2014). Distributed by On the
                     Dot to CNA and Exclusive Books throughout the Western Cape.
-                    Cape Etc is also available at select outlets, including:
+                    Cape {"{town}"} Etc is also available at select outlets,
+                    including:
                   </p>
                   <ul
                     style={{

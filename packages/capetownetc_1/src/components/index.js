@@ -45,7 +45,7 @@ const Root = ({ state }) => {
         const newMenu = await fetchMenu(state);
         setMenu(newMenu);
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
       }
     };
     fetchMenuData();

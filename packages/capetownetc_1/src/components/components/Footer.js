@@ -26,8 +26,7 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
 
       if (element !== null) {
         height = element.clientHeight;
-        setFooterHeight(height);
-        console.log("footer height", height);
+        setFooterHeight(height); 
       }
     };
 

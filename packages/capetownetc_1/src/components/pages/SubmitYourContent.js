@@ -325,14 +325,13 @@ const SubmitYourContent = ({
                     >
                       By clicking ''I Accept' below, I accept the terms set out
                       in the Content Assignment Agreement and hereby irrevocably
-                      assign to Cape Town Etc absolutely and with full title
+                      assign to Cape {"{town}"} Etc absolutely and with full title
                       guarantee, all intellectual property rights and interest
                       and all other rights in and to the Content (regardless of
                       the format such Content is submitted in by me).
                       Furthermore, I hereby confirm and agree that from the date
                       I accept these terms and conditions and those further
-                      specified in the Content Assignment Agreement, Cape Town
-                      Etc shall be exclusively entitled to exploit the Content
+                      specified in the Content Assignment Agreement, Cape {"{town}"} Etc shall be exclusively entitled to exploit the Content
                       in any manner or context, throughout the world, on any and
                       all media whether now known or hereafter invented and in
                       perpetuity. I also confirm that any third party or person

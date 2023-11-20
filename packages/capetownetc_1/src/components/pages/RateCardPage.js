@@ -72,7 +72,7 @@ const RateCardPage = ({
   return (
     <main className="homepage_main_parent_1">
       {/* <FullWidthPost
-        title={"Cape Town Etc Showreel headline copy"}
+        title={"Cape {"{town}"} Etc Showreel headline copy"}
         link={"#cape-town-etc-showreel-headline-copy"}
       /> */}
 
