@@ -86,7 +86,7 @@ const ArticleListView_1 = ({
                                 <h1
                                   dangerouslySetInnerHTML={customPost.title}
                                 />
-                              </Link>
+                              </Link> 
                               <CategoryDateText
                                 dateText={customPost.date}
                                 textColor={"white"}

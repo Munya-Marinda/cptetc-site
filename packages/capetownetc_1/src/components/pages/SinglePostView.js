@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import { CustomWPRestServicePostObject, formatDate } from "../js/main";
-import { Placeholder } from "react-bootstrap";
-import { FaGreaterThan } from "react-icons/fa";
-import ArticleIcons from "../components/ArticleIcons";
-import CategoryDateText from "../components/CategoryDateText";
+import { formatDate } from "../js/main";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import { Carousel } from "react-bootstrap";
 import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
@@ -25,10 +21,10 @@ const SinglePostView = ({
   const postContent = { __html: post.content.rendered.trim() };
   const postDate = formatDate(post.date);
   const postAuthorID = post._embedded.author;
+  const author = state.source.author[postAuthorID].name;
   //
   const postsSet1_categoryID = 3;
   const [postsSet1, setPostsSet1] = useState(null);
-  const [currentPost, setCurrentPost] = useState(null);
   const [postImages, setPostImages] = useState([]);
   const [adPositions, setAdPositions] = useState(false);
   //
@@ -45,21 +41,25 @@ const SinglePostView = ({
           WP_SiteUrl + "/wp-json/wp/v2/posts/" + postID + "?_embed"
         );
         if (!response.ok) {
-          setCurrentPost(false);
           return;
         }
         const postData = await response.json();
-        setCurrentPost(postData);
         const tempPostImages = [];
+        //
+        // Object.keys(state.source.attachment).forEach((key) => {
+        //   console.log(state.source.attachment[key].source_url);
+        //   tempPostImages.push(state.source.attachment[key].source_url);
+        // });
+        //
         if (postData) {
           postData._embedded["wp:featuredmedia"].forEach((img) => {
             tempPostImages.push(img.link);
           });
         }
+        //
         setPostImages(tempPostImages);
       } catch (error) {
         console.error("Error fetching posts:", error);
-        setCurrentPost(false);
       }
     };
     fetchCurrentPost();
@@ -90,6 +90,7 @@ const SinglePostView = ({
   //
   //
   useEffect(() => {
+    //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
         .getElementById("ad_vertical_1_id_1_position")
@@ -144,7 +145,7 @@ const SinglePostView = ({
                     Posted on {postDate}
                   </span>
                   <span className="single_view_byline_span_1">
-                    By: {postAuthorID}
+                    By: {author}
                   </span>
                 </div>
                 <div className="single_view_socialIcons_parent_1">
@@ -153,13 +154,17 @@ const SinglePostView = ({
               </div>
 
               <div className="single_view_carousel_parent_1">
-                <Carousel>
+                {/* <Carousel>
                   {postImages.map((url, index) => (
-                    <Carousel.Item key={index}>
-                      <img src={url} className="d-block w-100" alt="Image" />
-                    </Carousel.Item>
-                  ))}
-                </Carousel>
+                    <Carousel.Item key={index}> */}
+                <img
+                  src={postImages[0]}
+                  className="d-block w-100"
+                  alt="Post Image"
+                />
+                {/* </Carousel.Item>
+                  ))} */}
+                {/* </Carousel> */}
               </div>
 
               <div
@@ -174,7 +179,7 @@ const SinglePostView = ({
               />
 
               <ArticleListView_3
-                title={"Related Articles"} 
+                title={"Related Articles"}
                 postsSet={postsSet1}
                 WP_SiteUrl={WP_SiteUrl}
                 postsSet_categoryID={postsSet1_categoryID}

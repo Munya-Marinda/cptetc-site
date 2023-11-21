@@ -79,7 +79,7 @@ const SidebarListingWithImages = ({
                             <CategoryDateText
                               categoryText={_categoryText}
                               dateText={customPost.date}
-                            />
+                            /> 
                           </div>
                         </div>
                       );

@@ -158,24 +158,6 @@ export const FixInvalidLink = (link) => {
   return link;
 };
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 export function formatDate(inputDate) {
   const months = [
     "JANUARY",
@@ -199,3 +181,49 @@ export function formatDate(inputDate) {
 
   return `${day} ${month} ${year}`;
 }
+
+export const getCurrentDate = () => {
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const currentDate = new Date();
+
+  const dayOfWeek = daysOfWeek[currentDate.getDay()];
+  const month = months[currentDate.getMonth()];
+  const dayOfMonth = currentDate.getDate();
+  const year = currentDate.getFullYear();
+
+  // Add the "th" for days like 4th, 5th, etc.
+  let daySuffix = "th";
+  if (dayOfMonth === 1 || dayOfMonth === 21 || dayOfMonth === 31) {
+    daySuffix = "st";
+  } else if (dayOfMonth === 2 || dayOfMonth === 22) {
+    daySuffix = "nd";
+  } else if (dayOfMonth === 3 || dayOfMonth === 23) {
+    daySuffix = "rd";
+  }
+
+  const formattedDate = `${dayOfWeek}, ${month} ${dayOfMonth}${daySuffix}, ${year}`;
+  return formattedDate;
+};

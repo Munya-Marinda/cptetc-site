@@ -37,7 +37,7 @@ const SidebarListingWithOutImages = ({
                         WP_SiteUrl,
                         post,
                         postsSet_categoryID
-                      );
+                      ); 
                       const _categoryText =
                         customPost.categoryText !== undefined &&
                         customPost.categoryText !== null &&

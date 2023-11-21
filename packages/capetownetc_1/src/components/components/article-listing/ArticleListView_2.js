@@ -196,7 +196,7 @@ const ArticleListView_2 = ({
                                 style={{ marginTop: "10px" }}
                                 dangerouslySetInnerHTML={customPost.title}
                               />
-                            </Link>
+                            </Link> 
                           </div>
                         </div>
                       );

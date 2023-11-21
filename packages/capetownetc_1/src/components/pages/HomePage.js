@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import { FaGreaterThan } from "react-icons/fa";
 import ArticleIcons from "../components/ArticleIcons";
 import CategoryDateText from "../components/CategoryDateText";
 import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
@@ -76,7 +75,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet2_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
 
         if (!response.ok) {
@@ -86,6 +85,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
         const postsData = await response.json();
         setPostsSet2(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet5(filterAndSortPosts(shallowCopy));
+        //
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet2(false);
@@ -128,7 +131,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           WP_SiteUrl +
           "/wp-json/wp/v2/posts?categories=" +
           postsSet4_categoryID +
-          "&per_page=100&orderby=date&order=desc&_embed";
+          "&per_page=50&orderby=date&order=desc&_embed";
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -137,7 +140,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         }
 
         const postsData = await response.json();
-        setPostsSet4(postsData);
+        setPostsSet4(filterAndSortPosts(postsData));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet4(false);
@@ -188,7 +191,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
         const adData = await response.json();
         setAd_1(adData);
-      } catch (error) { 
+      } catch (error) {
         setAd_1(false);
       }
     };
@@ -210,6 +213,13 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
     setAdPositionsFunc();
     window.addEventListener("resize", setAdPositionsFunc);
   }, []);
+
+  //
+  //
+  //
+  //
+  //
+  //
   //
   //
   //

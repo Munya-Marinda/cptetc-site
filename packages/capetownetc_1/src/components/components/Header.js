@@ -6,7 +6,11 @@ import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
 import { FaBars, FaCloud, FaSearch } from "react-icons/fa";
 import { Carousel, Placeholder } from "react-bootstrap";
-import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
+import {
+  CustomWPRestServicePostObject,
+  FixInvalidLink,
+  getCurrentDate,
+} from "../js/main";
 import CategoryDateText from "./CategoryDateText";
 import Accordion from "react-bootstrap/Accordion";
 import SocialMediaIcons_sm from "./SocialMediaIcons_sm";
@@ -49,12 +53,19 @@ const Header = ({
   const [stickyContainerHeight, setStickyContainerHeight] = useState(0);
   const [menuObject, setMenuObject] = useState(null);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [currentDate, setCurrentDate] = useState("");
+  //
+  //
   //
   const data = state.source.get(state.router.link);
+  //
+  //
   //
   useEffect(() => {
     updateNavBar(null);
   }, [data.route]);
+  //
+  //
   //
   useEffect(() => {
     if (menu === null || menu === undefined) {
@@ -78,9 +89,9 @@ const Header = ({
     }
   }, [menu]);
   //
-  useEffect(() => {
-    console.log(menuParentTitle);
-    //
+  //
+  //
+  useEffect(() => { 
     //
     const fetch1Posts = async () => {
       try {
@@ -112,6 +123,8 @@ const Header = ({
     fetch1Posts();
     //
   }, []);
+  //
+  //
   //
   const updateNavBar = (menu) => {
     const newRouteParent = data.route.split("/")[1];
@@ -173,6 +186,10 @@ const Header = ({
   //
   //
   useEffect(() => {
+    setCurrentDate(getCurrentDate());
+    //
+    //
+    //
     const handleScroll = () => {
       const specificElement = document.getElementById("ad_make_sticky");
       const specificElementPosition =
@@ -227,7 +244,7 @@ const Header = ({
         <div className="topbar_container_1">
           <div className="topbar_date_weather_parent_1">
             <div className="topbar_date_parent_1">
-              <span>Monday, July 24th, 2023</span>
+              <span>{currentDate}</span>
             </div>
             <div className="topbar_weather_parent_1">
               <span>
@@ -475,73 +492,76 @@ const Header = ({
           when={
             data.route !== "/" &&
             data.route !== "/vouchers/" &&
-            data.route !== "/subscribe/" &&
-            menuParentTitle !== "home" &&
-            menuParentTitle !== null &&
-            menuParentTitle !== undefined
+            data.route !== "/subscribe-capetownetc-magazine/"
           }
           className="wide_dropdown_nav_parent_1"
         >
-          <div className="wide_dropdown_nav_container_1">
-            <div className="wide_dropdown_nav_header_1">{menuParentTitle}</div>
-            <div className="wide_dropdown_links_parent_1">
-              {menuChildren !== null ? (
-                <>
-                  {menuChildren !== false ? (
+          {typeof menuParentTitle === "string" &&
+            menuParentTitle !== null &&
+            menuParentTitle !== undefined && (
+              <div className="wide_dropdown_nav_container_1">
+                <div className="wide_dropdown_nav_header_1">
+                  {menuParentTitle.toLowerCase() !== "home" && menuParentTitle}
+                </div>
+                <div className="wide_dropdown_links_parent_1">
+                  {menuChildren !== null ? (
                     <>
-                      {menuChildren.length !== 0 ? (
+                      {menuChildren !== false ? (
                         <>
-                          {menuParentTitle !== "Advertise" && (
-                            <Link link={menuParentUrl}>
-                              <div className="wide_dropdown_links_container_1">
-                                <span className="wide_dropdown_links_span_1">
-                                  Trending
-                                </span>
-                                {menuParentUrl === data.route && (
-                                  <div className="nav_wide_links_active_1"></div>
-                                )}
-                              </div>
-                            </Link>
+                          {menuChildren.length !== 0 ? (
+                            <>
+                              {menuParentTitle !== "Advertise" && (
+                                <Link link={menuParentUrl}>
+                                  <div className="wide_dropdown_links_container_1">
+                                    <span className="wide_dropdown_links_span_1">
+                                      Trending
+                                    </span>
+                                    {menuParentUrl === data.route && (
+                                      <div className="nav_wide_links_active_1"></div>
+                                    )}
+                                  </div>
+                                </Link>
+                              )}
+                              {menuChildren.map((child, index) => {
+                                const child_url = FixInvalidLink(child.url);
+                                //
+                                //
+                                return (
+                                  <Link key={index} link={child_url}>
+                                    <div className="wide_dropdown_links_container_1">
+                                      <span className="wide_dropdown_links_span_1">
+                                        {child.title}
+                                      </span>
+                                      {child_url === data.route && (
+                                        <div className="nav_wide_links_active_1"></div>
+                                      )}
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <div className="spinner_parent_0"></div>
                           )}
-                          {menuChildren.map((child, index) => {
-                            const child_url = FixInvalidLink(child.url);
-                            //
-                            //
-                            return (
-                              <Link key={index} link={child_url}>
-                                <div className="wide_dropdown_links_container_1">
-                                  <span className="wide_dropdown_links_span_1">
-                                    {child.title}
-                                  </span>
-                                  {child_url === data.route && (
-                                    <div className="nav_wide_links_active_1"></div>
-                                  )}
-                                </div>
-                              </Link>
-                            );
-                          })}
                         </>
                       ) : (
                         <div className="spinner_parent_0"></div>
                       )}
                     </>
                   ) : (
-                    <div className="spinner_parent_0"></div>
+                    <div className="nav_wide_placeholder_parent_1">
+                      <Placeholder animation="glow">
+                        <Placeholder xs={2} bg="light" />
+                        <Placeholder xs={2} bg="light" />
+                        <Placeholder xs={2} bg="light" />
+                        <Placeholder xs={2} bg="light" />
+                        <Placeholder xs={2} bg="light" />
+                      </Placeholder>
+                    </div>
                   )}
-                </>
-              ) : (
-                <div className="nav_wide_placeholder_parent_1">
-                  <Placeholder animation="glow">
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                  </Placeholder>
                 </div>
-              )}
-            </div>
-          </div>
+              </div>
+            )}
         </div>
       </Switch>
       {/* CAROUSEL DESKTOP */}
