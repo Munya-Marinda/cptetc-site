@@ -91,62 +91,62 @@ const SubscribePage = ({
     const issuesData = [
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "January 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "February 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "March 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "April 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "May 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "June 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "July 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "August 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "September 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "October 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "November 2023",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg",
+        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "December 2023",
       },
     ];
@@ -244,7 +244,7 @@ const SubscribePage = ({
               <div className="subscribe_container_1">
                 <img
                   className="magazine_preview_img_1"
-                  src="https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg"
+                  src="https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg"
                   alt="Latest CapeETC cover"
                 />
                 <div className="subscribe_container_2">

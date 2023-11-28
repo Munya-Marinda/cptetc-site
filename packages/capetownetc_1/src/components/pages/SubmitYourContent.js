@@ -403,7 +403,7 @@ const SubmitYourContent = ({
                 <div className="magazine_preview_parent_1">
                   <img
                     className="magazine_preview_img_1"
-                    src="https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg"
+                    src="https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg"
                     alt="Latest CapeETC cover"
                   />
                   <div className="magazine_preview_btn_parent_1">

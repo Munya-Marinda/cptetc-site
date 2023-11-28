@@ -2933,7 +2933,7 @@ Media queries for content width and
 
 @media only screen and (max-width: 1235px) {
   :root {
-    --maxContentWidth: 945px;
+    --maxContentWidth: 977px;
     --post_block_1_featureImg_1_width: 627.259px;
     --post_block_1_featureImg_1_height: 415.458px;
     --post_block_1_featureImgs_1_width: 304.163px;
@@ -3169,6 +3169,7 @@ Media queries for content width and
   //
   //
   ADVERTS
+  //
   */
 
   .ad_horizontal_1 {
