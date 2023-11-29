@@ -98,7 +98,10 @@ export const CustomWPRestServicePostObject = (
   };
   const postSlug = "//" + post?.link?.substring(WP_SiteUrl.length);
   const postDate = formatDate(post?.date);
-  const postCommentsSlug = post?._links?.replies[0]?.href;
+  const postCommentsSlug =
+    post?._links?.replies !== undefined && post?._links?.replies !== null
+      ? post?._links?.replies[0]?.href
+      : 0;
   //
   let postImgUrl =
     "https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60";
@@ -110,8 +113,59 @@ export const CustomWPRestServicePostObject = (
   //
   let postViews = post?.meta?.Views;
   //
-  const postCategoriesArray = post?._embedded["wp:term"][0];
+  const postCategoriesArray =
+    post?._embedded["wp:term"] !== undefined && post?._embedded["wp:term"]
+      ? post?._embedded["wp:term"][0]
+      : [];
   let postCategoryText = GetCategoryName(postCategoriesArray, post_categoryID);
+  return {
+    title: postTitle,
+    slug: postSlug,
+    commentsSlug: postCommentsSlug,
+    imgUrl: postImgUrl,
+    categoryText: postCategoryText,
+    date: postDate,
+    views: postViews,
+    content: postContent,
+    excerpt: postExcerpt,
+  };
+};
+
+export const CustomWPRestServicePostObject_searchResult = (
+  WP_SiteUrl,
+  post,
+  substrContent = null,
+  substrExerpt = null
+) => {
+  //
+  console.log(post);
+  //
+  const postTitle = {
+    __html: post._embedded.self[0].title.rendered,
+  };
+  const postContent = "";
+  const postExcerpt = "";
+  const postSlug = "//" + post.url.substring(WP_SiteUrl.length);
+  const postDate = formatDate(post._embedded.self[0].date);
+  const postCommentsSlug = null;
+  //
+  let postImgUrl =
+    "https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60";
+  if (post._embedded.self[0]._links["wp:featuredmedia"] !== undefined) {
+    if (post._embedded.self[0]._links["wp:featuredmedia"]?.length > 0) {
+      postImgUrl =
+        post._embedded.self[0]._links["wp:featuredmedia"][0].source_url;
+    }
+  }
+  //
+  let postViews =
+    post?._embedded?.self[0]?.meta?.Views === ""
+      ? 0
+      : post?._embedded?.self[0]?.meta?.Views;
+  //
+  const postCategoriesArray = null;
+  let postCategoryText = null;
+  //
   return {
     title: postTitle,
     slug: postSlug,

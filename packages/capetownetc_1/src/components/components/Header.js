@@ -5,7 +5,7 @@ import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
 import { FaBars, FaCloud, FaSearch } from "react-icons/fa";
-import { Carousel, Placeholder } from "react-bootstrap";
+import { Carousel, Modal, Placeholder } from "react-bootstrap";
 import {
   CustomWPRestServicePostObject,
   FixInvalidLink,
@@ -55,6 +55,10 @@ const Header = ({
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [currentDate, setCurrentDate] = useState("");
   //
+  // Search modal
+  const [modalShow, setModalShow] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  //
   //
   //
   const data = state.source.get(state.router.link);
@@ -91,7 +95,7 @@ const Header = ({
   //
   //
   //
-  useEffect(() => { 
+  useEffect(() => {
     //
     const fetch1Posts = async () => {
       try {
@@ -123,6 +127,8 @@ const Header = ({
     fetch1Posts();
     //
   }, []);
+  //
+  //
   //
   //
   //
@@ -236,6 +242,31 @@ const Header = ({
   //
   return (
     <>
+      {/* SEARCH MODAL */}
+
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body>
+          <label>
+            Search:
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </label>
+          <Link link={"/search/?s=" + searchTerm}>Search</Link>
+          <button onClick={() => setModalShow(false)}>Close</button>
+        </Modal.Body>
+      </Modal>
+
+      {/* TOP-MOST AD */}
+
       <div className="ad_horizontal_parent_1">
         <div className="ad_horizontal_1">[AD]</div>
       </div>
@@ -480,7 +511,10 @@ const Header = ({
               </div>
             )}
           </div>
-          <div className="nav_search_container_1">
+          <div
+            className="nav_search_container_1"
+            onClick={() => setModalShow(true)}
+          >
             <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/search-icon-0.svg" />
           </div>
         </div>

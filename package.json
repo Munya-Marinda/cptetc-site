@@ -25,6 +25,8 @@
     "capetownetc_1": "file:packages/capetownetc_1",
     "frontity": "^1.17.2",
     "react-bootstrap": "^2.9.0",
-    "react-icons": "^4.11.0"
+    "react-countup": "^6.5.0",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.20.0"
   }
 }

@@ -21,6 +21,7 @@ import WinCategoryPage from "./pages/WinCategoryPage";
 import WinCompetitionsPage from "./pages/WinCompetitionsPage";
 import RateCardPage from "./pages/RateCardPage";
 import SubmitYourContent from "./pages/SubmitYourContent";
+import SearchResultPage from "./pages/SearchResultPage";
 
 const Root = ({ state }) => {
   const [headerData, setHeaderData] = useState("/");
@@ -59,7 +60,7 @@ const Root = ({ state }) => {
     setFormOpen(bool);
   };
 
-  const change_headerStickyContainerHeight = (newHeight) => { 
+  const change_headerStickyContainerHeight = (newHeight) => {
     setHeaderStickyContainerHeight(newHeight + 20);
   };
 
@@ -84,7 +85,7 @@ const Root = ({ state }) => {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto&family=Montserrat:wght@800&display=swap"
           rel="stylesheet"
         />
 
@@ -180,6 +181,11 @@ const Root = ({ state }) => {
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
           when={data.route === "/things-to-do/"}
+        />
+        <SearchResultPage
+          headerIsSticky={headerIsSticky}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          when={data.route === "/search/"}
         />
         <ThingsToDoCategoryPage
           headerData={headerData}
