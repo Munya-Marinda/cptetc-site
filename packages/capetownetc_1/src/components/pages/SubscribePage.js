@@ -246,7 +246,7 @@ const SubscribePage = ({
                   >
                     Cape Etc magazine is your essential companion for
                     discovering the best of the Mother City. We feature art,
-                    restaurants, adventures, accommodations, and much more.
+                    restaurants, adventures, places to stay, and much more.
                     Consider us your key to unlocking the city and its
                     surrounding wonders. <i>Let us guide you!</i>
                     <br />* 9 575 ABC (Oct - Dec 2014). Distributed by On the
@@ -268,7 +268,7 @@ const SubscribePage = ({
                       Apostles, Cape Grace, Mount Nelson, Winchester Mansions,
                       Table Bay Hotel, One&Only Cape Town and many others
                     </li>
-                    <li>Upmarket restaurants and entertainment venues</li>
+                    <li>Select restaurants and entertainment venues</li>
                     <li>
                       In-flight on Lufthansa and Emirates flights into Cape Town
                     </li>
