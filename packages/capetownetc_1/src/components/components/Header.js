@@ -4,7 +4,7 @@ import { connect } from "frontity";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
-import { FaBars, FaCloud, FaSearch } from "react-icons/fa";
+import { FaBars, FaCloud,  } from "react-icons/fa";
 import { Carousel, Modal, Placeholder } from "react-bootstrap";
 import {
   CustomWPRestServicePostObject,

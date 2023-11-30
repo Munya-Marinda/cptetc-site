@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaGreaterThan,
-  FaLessThan,
-} from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Carousel, Placeholder } from "react-bootstrap";
+import { getCurrentMonthYear } from "../js/main";
 
 //
 //
@@ -61,6 +57,7 @@ const SubscribePage = ({
   const [pageObject, setPageObject] = useState(false);
   const [issuesChuncksSet1, setIssueshuncksSet1] = useState(null);
   const maxCarouselItems = 5;
+  const [currentDate, setCurrentDate] = useState("");
 
   //
   //
@@ -69,6 +66,9 @@ const SubscribePage = ({
   //
   //
   useEffect(() => {
+    setCurrentDate(getCurrentMonthYear());
+    //
+    //
     // FOOD AND DRINk
     const fetchPageContent = async () => {
       try {
@@ -91,63 +91,43 @@ const SubscribePage = ({
     const issuesData = [
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "January 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "February 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "March 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "April 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "May 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "June 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "July 2023",
-      },
-      {
-        link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
         month: "August 2023",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape Etc Spring 2023.jpg",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "September 2023",
+        month: "June 2023",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape Etc Winter 2023.jpg",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "October 2023",
+        month: "February 2023",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape {Town} Etc 2_23.jpg",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "November 2023",
+        month: "January 2023",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Pages from Cape {Town} Etc 1-23.jpg",
       },
       {
         link: "https://github.com/",
-        url: "https://www.hmshop.co.za/wp-content/uploads/2023/04/CTEOctober23.jpg",
-        month: "December 2023",
+        month: "February 2022",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape Etc 2_22.jpg",
+      },
+      {
+        link: "https://github.com/",
+        month: "January 2022",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape {Town} Etc 1-2022.jpg",
+      },
+      {
+        link: "https://github.com/",
+        month: "March 2021",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape {Town} Etc 3_2021.jpg",
+      },
+      {
+        link: "https://github.com/",
+        month: "February 2021",
+        url: "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CapeEct Covers/Cape Etc 2-2021.jpg",
       },
     ];
     const issuesChunks = [];
@@ -256,7 +236,7 @@ const SubscribePage = ({
                   >
                     Cape Etc
                   </h2>
-                  <h6>Month 2023</h6>
+                  <h6>{currentDate}</h6>
                   <p
                     style={{
                       fontSize: "14px",
