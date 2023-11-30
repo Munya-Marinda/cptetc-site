@@ -326,27 +326,102 @@ const ContactPage = ({
                   </h1>
                   <div className="contact_page_stats_parent">
                     <div className="contact_page_stat_container">
-                      <h1>+20</h1>
+                      {/* <h1>+20</h1> */}
+                      <CountUp
+                        start={0}
+                        end={20}
+                        delay={0}
+                        duration={countUpDuration}
+                      >
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +<span ref={countUpRef} />
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Brands</p>
                     </div>
                     <div className="contact_page_stat_container">
-                      <h1>+120 mil</h1>
+                      {/* <h1>+120 mil</h1> */}
+                      <CountUp
+                        start={0}
+                        end={120}
+                        delay={0}
+                        duration={countUpDuration}
+                      >
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +<span ref={countUpRef} /> mil
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Website Views</p>
                     </div>
                     <div className="contact_page_stat_container">
-                      <h1>+4 mil</h1>
+                      {/* <h1>+4 mil</h1> */}
+                      <CountUp start={0} end={4} delay={0} duration={10}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +<span ref={countUpRef} /> mil
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Social Followers</p>
                     </div>
                     <div className="contact_page_stat_container">
-                      <h1>+840 k</h1>
+                      {/* <h1>+840 k</h1> */}
+                      <CountUp
+                        start={0}
+                        end={840}
+                        delay={0}
+                        duration={countUpDuration}
+                      >
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +<span ref={countUpRef} />k
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Email Subscribers</p>
                     </div>
                     <div className="contact_page_stat_container">
-                      <h1>+1.2 mil</h1>
+                      {/* <h1>+1.2 mil</h1> */}
+                      <CountUp start={0} end={2} delay={0} duration={10}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +1.
+                              <span ref={countUpRef} /> mil
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Print Run</p>
                     </div>
                     <div className="contact_page_stat_container">
-                      <h1>+225</h1>
+                      {/* <h1>+225</h1> */}
+                      <CountUp
+                        start={0}
+                        end={225}
+                        delay={0}
+                        duration={countUpDuration}
+                      >
+                        {({ countUpRef }) => (
+                          <div>
+                            <h1>
+                              +<span ref={countUpRef} />
+                            </h1>
+                          </div>
+                        )}
+                      </CountUp>
                       <p>Staff</p>
                     </div>
                   </div>
@@ -362,7 +437,7 @@ const ContactPage = ({
                     }
                     width="500"
                     height="240"
-                    controls=""
+                    // controls=""
                     autoplay="true"
                   />
                 </div>
