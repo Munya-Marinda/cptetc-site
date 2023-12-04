@@ -438,7 +438,7 @@ const ContactPage = ({
                     width="500"
                     height="240"
                     // controls=""
-                    autoplay="true"
+                    autoPlay="true"
                   />
                 </div>
               </div>

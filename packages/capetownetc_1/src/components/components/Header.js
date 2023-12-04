@@ -4,7 +4,7 @@ import { connect } from "frontity";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
-import { FaBars, FaCloud,  } from "react-icons/fa";
+import { FaBars, FaCloud } from "react-icons/fa";
 import { Carousel, Modal, Placeholder } from "react-bootstrap";
 import {
   CustomWPRestServicePostObject,
@@ -228,6 +228,11 @@ const Header = ({
   }, []);
   //
   //
+  const navigateToSearchPage = () => {
+    if (window) {
+      window.location.replace("/search/?s=" + searchTerm);
+    }
+  };
   //
   //
   //
@@ -247,21 +252,55 @@ const Header = ({
       <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        size="sm"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Body>
-          <label>
-            Search:
+        <Modal.Body style={{ padding: "0px", backgroundColor: "silver" }}>
+          <div
+            style={{
+              padding: "0px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <input
               type="text"
+              placeholder="Search..."
               value={searchTerm}
+              style={{
+                width: "50vw",
+                border: "0px",
+                fontSize: "15px",
+                padding: "15px 20px",
+              }}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.code === "Enter") {
+                  navigateToSearchPage();
+                }
+              }}
             />
-          </label>
-          <Link link={"/search/?s=" + searchTerm}>Search</Link>
-          <button onClick={() => setModalShow(false)}>Close</button>
+            <button
+              onClick={() => {
+                navigateToSearchPage();
+              }}
+              style={{
+                border: "0px",
+                padding: "0px 20px",
+                backgroundColor: "silver",
+              }}
+            >
+              <img
+                style={{
+                  width: "20px",
+                }}
+                src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/search-icon-1.svg"
+              />
+            </button>
+          </div>
         </Modal.Body>
       </Modal>
 

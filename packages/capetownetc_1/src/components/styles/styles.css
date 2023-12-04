@@ -2578,24 +2578,6 @@ SPINNER
   justify-content: center;
 }
 
-/* 
-//
-//
-//
-//
-//
-//
-INFINITE AUTO SLIDER
-*/
-
-/* @mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-} */
-
 /* Animation */
 @keyframes scroll {
   0% {
@@ -2750,14 +2732,7 @@ INFINITE AUTO SLIDER
 //
 //
 MALICOUS
-*/
-
-/* .wp-embedded-content {
-  max-width: fit-content;
-  height: 550px !important;
-  position: static !important;
-} */
-
+*/ 
 svg {
   vertical-align: unset !important;
 }
@@ -2822,6 +2797,10 @@ svg {
 
 .zero_opacity {
   opacity: 0 !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.8 !important;
 }
 
 /*

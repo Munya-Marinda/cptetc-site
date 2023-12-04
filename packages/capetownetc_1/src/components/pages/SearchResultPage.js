@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
 import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
-import ArticleListView_3 from "../components/article-listing/ArticleListView_3";
 import ArticleListView_2_search from "../components/article-listing/ArticleListView_2_search";
+import LoadMorePosts from "../components/LoadMorePosts";
 
 const SearchResultPage = ({
   state,
@@ -17,6 +17,10 @@ const SearchResultPage = ({
   // NEWS
   const postsSet2_categoryID = 3;
   const [postsSet2, setPostsSet2] = useState(null);
+  // LOAD MORE
+  const [pageNumber, setPageNumber] = useState(1);
+  const [showLoadMoreButton, setShowLoadMoreButton] = useState(true);
+  const [isLoadingNewPosts, setIsLoadingNewPosts] = useState(false);
   //
   const [adPositions, setAdPositions] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -39,7 +43,7 @@ const SearchResultPage = ({
             WP_SiteUrl +
               "/wp-json/wp/v2/search?search=" +
               searchTerm +
-              "&per_page=100&orderby=date&order=desc&_embed"
+              "&orderby=date&order=desc&_embed"
           );
           if (!response.ok) {
             setPostsSet1(false);
@@ -71,7 +75,7 @@ const SearchResultPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet2_categoryID +
-            "&per_page=50&orderby=date&order=desc&_embed"
+            "&per_page=5&orderby=date&order=desc&_embed"
         );
 
         if (!response.ok) {
@@ -79,7 +83,6 @@ const SearchResultPage = ({
           return;
         }
         const postsData = await response.json();
-        // console.log(postsData);
         setPostsSet2(postsData);
         //
       } catch (error) {
@@ -107,6 +110,51 @@ const SearchResultPage = ({
     window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
+  //
+  //
+  const loadMorePosts = async () => {
+    setIsLoadingNewPosts(true);
+    try {
+      const url =
+        WP_SiteUrl +
+        "/wp-json/wp/v2/search?search=" +
+        searchTerm +
+        "&page=" +
+        (pageNumber + 1) +
+        "&orderby=date&order=desc&_embed";
+
+      const response = await fetch(url);
+      if (!response.ok) {
+        setShowLoadMoreButton(false);
+        setIsLoadingNewPosts(false);
+        return;
+      }
+      const postsData = await response.json();
+      if (
+        postsSet1 !== null &&
+        postsSet1 !== false &&
+        postsSet1 !== undefined
+      ) {
+        setPostsSet1([...postsSet1, ...postsData]);
+        setPageNumber(pageNumber + 1);
+      } else {
+        setPageNumber(1);
+        setPostsSet1(postsData);
+        setShowLoadMoreButton(true);
+      }
+      setIsLoadingNewPosts(false);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      setPostsSet1(false);
+      setIsLoadingNewPosts(false);
+      setShowLoadMoreButton(false);
+    }
+  };
+  //
+  //
+  const changeParentPageNumber = () => {
+    loadMorePosts();
+  };
   //
   //
   return (
@@ -141,6 +189,14 @@ const SearchResultPage = ({
                 WP_SiteUrl={WP_SiteUrl}
                 postsSet_categoryTitle={"THINGS TO DO"}
               />
+
+              {showLoadMoreButton && (
+                <LoadMorePosts
+                  newPageNumber={pageNumber}
+                  changeParentPageNumber={changeParentPageNumber}
+                  isLoadingNewPosts={isLoadingNewPosts}
+                />
+              )}
             </div>
 
             <div className="post_block_2_right_bar_parent_1">

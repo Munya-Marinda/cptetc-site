@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
 import CategoryDateText from "../CategoryDateText";
@@ -10,10 +10,46 @@ import Mobile_ArticleListView_1 from "./Mobile_ArticleListView_1";
 const ArticleListView_2_search = ({ postsSet, WP_SiteUrl, title }) => {
   //
   //
-  const [categoryText, setCategoryText] = useState("No category");
+  const [images, setImages] = useState([]);
   //
   //
   //
+  //
+  useEffect(() => {
+    const fetchImage = async (url, index) => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          return;
+        }
+        const img = await response.json();
+        setImages((prevImages) => {
+          const newImages = [...prevImages];
+          newImages[index] = img.link;
+          return newImages;
+        });
+      } catch (error) {
+        console.error("Error fetching image:", error);
+      }
+    };
+    //
+    if (
+      postsSet !== null &&
+      postsSet !== undefined &&
+      postsSet !== false &&
+      typeof postsSet === "object"
+    ) {
+      if (postsSet.length !== 0) {
+        postsSet.forEach((post, index) => {
+          fetchImage(
+            post?._embedded?.self[0]?._links["wp:featuredmedia"][0]?.href,
+            index
+          );
+        });
+      }
+    }
+  }, [postsSet]);
+
   //
   //
   //
@@ -44,7 +80,7 @@ const ArticleListView_2_search = ({ postsSet, WP_SiteUrl, title }) => {
               <>
                 {postsSet.length !== 0 ? (
                   <>
-                    {postsSet.slice(1, 10)?.map((post, index) => {
+                    {postsSet?.map((post, index) => {
                       const customPost =
                         CustomWPRestServicePostObject_searchResult(
                           WP_SiteUrl,
@@ -61,7 +97,7 @@ const ArticleListView_2_search = ({ postsSet, WP_SiteUrl, title }) => {
                           <div className="post_block_3_postImg_container_1">
                             <img
                               className="post_block_3_postImg_1"
-                              src={customPost.imgUrl}
+                              src={images[index]}
                               alt=""
                             />
                             {/* <ArticleIcons
