@@ -357,117 +357,117 @@ const Header = ({
             <>
               {menuObject.length !== 0 ? (
                 <>
-                  {/* <div
-                  className={
-                    "nav_mobile_parent_1" +
-                    (showMobileMenu ? " showMobileMenu" : " hideMobileMenu")
-                  }
-                >
-                  <Accordion defaultActiveKey="0">
-                    {Object.keys(menuObject).map((key, index) => {
-                      const menuParent = menuObject[key];
-                      const title = menuParent.title;
-                      let url = FixInvalidLink(menuParent.url);
-                      const pagesWithChildrenBool =
-                        title === "Home" ||
-                        title === "Advertise" ||
-                        title === "Subscribe" ||
-                        title === "Vouchers";
-                      //
-                      //
-                      //
-                      return (
-                        <div key={index} className="xxxxxxxx">
-                          <Accordion.Item eventKey={index}>
-                            <Accordion.Header style={{ padding: "0px" }}>
-                              {pagesWithChildrenBool ? (
-                                <Link
-                                  link={url}
+                  <div
+                    className={
+                      "nav_mobile_parent_1" +
+                      (showMobileMenu ? " showMobileMenu" : " hideMobileMenu")
+                    }
+                  >
+                    <Accordion defaultActiveKey="0">
+                      {Object.keys(menuObject).map((key, index) => {
+                        const menuParent = menuObject[key];
+                        const title = menuParent.title;
+                        let url = FixInvalidLink(menuParent.url);
+                        const pagesWithChildrenBool =
+                          title === "Home" ||
+                          title === "Advertise" ||
+                          title === "Subscribe" ||
+                          title === "Vouchers";
+                        //
+                        //
+                        //
+                        return (
+                          <div key={index} className="xxxxxxxx">
+                            <Accordion.Item eventKey={index}>
+                              <Accordion.Header style={{ padding: "0px" }}>
+                                {pagesWithChildrenBool ? (
+                                  <Link
+                                    link={url}
+                                    onClick={() => {
+                                      setShowMobileMenu(false);
+                                    }}
+                                  >
+                                    <span className="nav_wide_links_span_1">
+                                      {title}
+                                    </span>
+                                  </Link>
+                                ) : (
+                                  <span className="nav_wide_links_span_1">
+                                    {title}
+                                  </span>
+                                )}
+                              </Accordion.Header>
+                              {!pagesWithChildrenBool && (
+                                <Accordion.Body
                                   onClick={() => {
                                     setShowMobileMenu(false);
                                   }}
                                 >
-                                  <span className="nav_wide_links_span_1">
-                                    {title}
-                                  </span>
-                                </Link>
-                              ) : (
-                                <span className="nav_wide_links_span_1">
-                                  {title}
-                                </span>
-                              )}
-                            </Accordion.Header>
-                            {!pagesWithChildrenBool && (
-                              <Accordion.Body
-                                onClick={() => {
-                                  setShowMobileMenu(false);
-                                }}
-                              >
-                                {!pagesWithChildrenBool && (
-                                  <Link link={menuParentUrl}>
-                                    <div className="nav_mobile_sub_menu_parent_1">
-                                      <span
-                                        className="nav_wide_links_span_1"
-                                        style={{ opacity: 0.8 }}
-                                      >
-                                        Trending
-                                      </span>
-                                    </div>
-                                  </Link>
-                                )}
+                                  {!pagesWithChildrenBool && (
+                                    <Link link={menuParentUrl}>
+                                      <div className="nav_mobile_sub_menu_parent_1">
+                                        <span
+                                          className="nav_wide_links_span_1"
+                                          style={{ opacity: 0.8 }}
+                                        >
+                                          Trending
+                                        </span>
+                                      </div>
+                                    </Link>
+                                  )}
 
-                                {menuParent.children !== null ? (
-                                  <>
-                                    {menuParent.children !== false ? (
-                                      <>
-                                        {menuParent.children.length !== 0 ? (
-                                          <>
-                                            {menuParent.children.map(
-                                              (child, index) => {
-                                                const child_url =
-                                                  FixInvalidLink(child.url);
-                                                //
-                                                //
-                                                return (
-                                                  <Link
-                                                    key={index}
-                                                    link={child_url}
-                                                  >
-                                                    <div className="nav_mobile_sub_menu_parent_1">
-                                                      <span
-                                                        className="nav_wide_links_span_1"
-                                                        style={{
-                                                          opacity: 0.8,
-                                                        }}
-                                                      >
-                                                        {child.title}
-                                                      </span>
-                                                    </div>
-                                                  </Link>
-                                                );
-                                              }
-                                            )}
-                                          </>
-                                        ) : (
-                                          <></>
-                                        )}
-                                      </>
-                                    ) : (
-                                      <></>
-                                    )}
-                                  </>
-                                ) : (
-                                  <></>
-                                )}
-                              </Accordion.Body>
-                            )}
-                          </Accordion.Item>
-                        </div>
-                      );
-                    })}
-                  </Accordion>
-                </div> */}
-                  <div
+                                  {menuParent.children !== null ? (
+                                    <>
+                                      {menuParent.children !== false ? (
+                                        <>
+                                          {menuParent.children.length !== 0 ? (
+                                            <>
+                                              {menuParent.children.map(
+                                                (child, index) => {
+                                                  const child_url =
+                                                    FixInvalidLink(child.url);
+                                                  //
+                                                  //
+                                                  return (
+                                                    <Link
+                                                      key={index}
+                                                      link={child_url}
+                                                    >
+                                                      <div className="nav_mobile_sub_menu_parent_1">
+                                                        <span
+                                                          className="nav_wide_links_span_1"
+                                                          style={{
+                                                            opacity: 0.8,
+                                                          }}
+                                                        >
+                                                          {child.title}
+                                                        </span>
+                                                      </div>
+                                                    </Link>
+                                                  );
+                                                }
+                                              )}
+                                            </>
+                                          ) : (
+                                            <></>
+                                          )}
+                                        </>
+                                      ) : (
+                                        <></>
+                                      )}
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}
+                                </Accordion.Body>
+                              )}
+                            </Accordion.Item>
+                          </div>
+                        );
+                      })}
+                    </Accordion>
+                  </div>
+                  {/* <div
                     className={
                       "nav_mobile_parent_1" +
                       (showMobileMenu ? " showMobileMenu" : " hideMobileMenu")
@@ -577,7 +577,7 @@ const Header = ({
                         </div>
                       );
                     })}
-                  </div>
+                  </div> */}
                 </>
               ) : (
                 <></>
