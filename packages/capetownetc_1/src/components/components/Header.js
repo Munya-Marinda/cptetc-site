@@ -59,17 +59,11 @@ const Header = ({
   const [modalShow, setModalShow] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   //
-  //
-  //
   const data = state.source.get(state.router.link);
-  //
-  //
   //
   useEffect(() => {
     updateNavBar(null);
   }, [data.route]);
-  //
-  //
   //
   useEffect(() => {
     if (menu === null || menu === undefined) {
@@ -92,8 +86,6 @@ const Header = ({
       updateNavBar(!menu || menu === undefined || menu === null ? [] : menu);
     }
   }, [menu]);
-  //
-  //
   //
   useEffect(() => {
     //
@@ -127,10 +119,6 @@ const Header = ({
     fetch1Posts();
     //
   }, []);
-  //
-  //
-  //
-  //
   //
   const updateNavBar = (menu) => {
     const newRouteParent = data.route.split("/")[1];
@@ -183,14 +171,6 @@ const Header = ({
     });
   };
   //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
   useEffect(() => {
     setCurrentDate(getCurrentDate());
     //
@@ -226,7 +206,6 @@ const Header = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //
   //
   const navigateToSearchPage = () => {
     if (window) {
