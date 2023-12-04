@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import CountUp from "react-countup";
 import FullWidthPost from "../components/FullWidthPost";
+import DigitalStats from "../components/DigitalStats";
 
 const ContactPage = ({
   state,
@@ -120,151 +121,7 @@ const ContactPage = ({
                 viewers and community in a way that's tailored towards making an
                 impact
               </p>
-              <div className="contact_page_stats_parent">
-                <div className="contact_page_stat_container">
-                  {/* <h1>+505k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={505}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Readership</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+1.6 mil</h1> */}
-                  <CountUp start={0} end={6} delay={0} duration={6}>
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +1.
-                          <span ref={countUpRef} /> mil
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Combined Reach</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+330k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={330}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Digital Unique Browsers</p>
-                </div>
-              </div>
-
-              <div className="contact_page_stats_parent content_spacing_bottom_2">
-                <div className="contact_page_stat_container">
-                  {/* <h1>+202k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={202}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Facebook</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={398}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Twitter</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+81k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={81}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Instagram</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+88k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={88}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Webletter Subscribers</p>
-                </div>
-                <div className="contact_page_stat_container">
-                  {/* <h1>+49k</h1> */}
-                  <CountUp
-                    start={0}
-                    end={49}
-                    delay={0}
-                    duration={countUpDuration}
-                  >
-                    {({ countUpRef }) => (
-                      <div>
-                        <h1>
-                          +<span ref={countUpRef} />k
-                        </h1>
-                      </div>
-                    )}
-                  </CountUp>
-                  <p>Promo Mailer Subscribers</p>
-                </div>
-              </div>
+              <DigitalStats />
 
               {pageObject &&
                 pageObject !== undefined &&
@@ -435,15 +292,16 @@ const ContactPage = ({
                     src={
                       "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CTE-Website-Video.mp4"
                     }
-                    width="500"
-                    height="240"
-                    // controls=""
+                    className="contact_page_video_1"
+                    controls
                     autoPlay="true"
                   />
                 </div>
               </div>
 
-              <h1 className="contact_page_header_2">Our Brands</h1>
+              <h1 className="contact_page_header_2 content_spacing_top_1">
+                Our Brands
+              </h1>
 
               <p className="contact_page_paragraph_1">
                 These brands are at the core of our portfolio. Their brand power

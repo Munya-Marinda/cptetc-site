@@ -119,16 +119,19 @@ const Root = ({ state }) => {
         <ContactPage
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
-          when={
-            data.route === "/advertise/contact/" || data.route === "/advertise/"
-          }
+          when={data.route === "/advertise/contact/"}
         />
         <RateCardPage
+          _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
-          when={data.route === "/advertise/advertising/"}
+          when={
+            data.route === "/advertise/advertising/" ||
+            data.route === "/advertise/"
+          }
         />
         <SubscribePage
+          _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
           when={data.route === "/subscribe-capetownetc-magazine/"}

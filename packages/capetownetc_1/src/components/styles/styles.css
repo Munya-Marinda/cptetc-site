@@ -2006,6 +2006,24 @@ VOUCHERS PAGE
 CONTACT PAGE
 */
 
+.advertisewithus_page_header_1 {
+  width: 100%;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Gloock", serif;
+  text-align: left;
+}
+
+/* 
+//
+//
+//
+//
+//
+//
+CONTACT PAGE
+*/
+
 .contact_page_header_1 {
   width: 100%;
   font-size: 45px;
@@ -2051,7 +2069,10 @@ CONTACT PAGE
   justify-content: center;
 }
 
+.contact_page_stat_container_1 h1,
 .contact_page_stat_container h1 {
+  display: flex;
+  flex-direction: row;
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 0px;
@@ -2059,9 +2080,28 @@ CONTACT PAGE
   font-family: "Roboto", Arial;
 }
 
+.contact_page_stat_container_1 > p,
 .contact_page_stat_container > p {
   font-weight: 500;
   font-size: 14px;
+  text-wrap: nowrap;
+}
+
+.contact_page_stats_parent_1 {
+  width: 100%;
+  display: flex;
+  padding: 0px 10%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact_page_stat_container_1 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact_page_section_2_parent {
@@ -2073,6 +2113,8 @@ CONTACT PAGE
 
 .contact_page_section_2_container_2 {
   margin-left: 20px;
+  padding: 25px;
+  background-color: rgb(221, 237, 244);
 }
 
 .contact_page_section_2_video_1 {
@@ -2192,6 +2234,10 @@ CONTACT PAGE
   margin: 20px 0px;
 }
 
+.contact_page_video_1 {
+  width: calc(var(--maxContentWidth) * 0.4);
+}
+
 /* 
 //
 //
@@ -2271,9 +2317,15 @@ SUBSCRIBE
   color: black !important;
 }
 
+.subscribe_recent_issues_img_1_div {
+  width: 120px;
+  height: 143.438px;
+  margin: 0px 10px;
+  background-color: silver;
+}
+
 .subscribe_recent_issues_img_1 {
   width: 120px;
-  margin: 0px 10px;
 }
 
 .subscribe_button_group {
@@ -2732,7 +2784,7 @@ SPINNER
 //
 //
 MALICOUS
-*/ 
+*/
 svg {
   vertical-align: unset !important;
 }
@@ -3397,6 +3449,25 @@ Media queries for content width and
     margin-bottom: 40px;
   }
 
+  .contact_page_section_2_container_2 {
+    margin: "0px";
+  }
+
+  .contact_page_video_1 {
+    width: calc(var(--maxContentWidth) * 0.85);
+  }
+
+  .contact_page_section_2_parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .contact_page_section_2_text {
+    margin-top: 40px;
+  }
+
   /* 
   //
   //
@@ -3421,6 +3492,7 @@ Media queries for content width and
   */
   .footer_container_2_1_1 {
     display: block;
+    margin-right: 30px;
   }
 
   .footer_container_2_2 {
@@ -3435,13 +3507,16 @@ Media queries for content width and
     padding: 40px 10px;
     padding: 40px 10px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     max-width: calc(var(--maxContentWidth) * 1.4);
   }
 
   .footer_container_2_1_links_parent {
-    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: flex-start;
   }
 
   /* 
@@ -3505,5 +3580,13 @@ Media queries for content width and
 
   .wide_dropdown_links_span_1 {
     text-wrap: nowrap;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contact_page_stats_parent_1 {
+    width: 100%;
+    flex-direction: unset;
+    flex-wrap: wrap;
   }
 }
