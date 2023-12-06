@@ -177,7 +177,7 @@ const RateCardPage = ({
                     "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CTE-Website-Video.mp4"
                   }
                   controls
-                  autoPlay="true"
+                  autoPlay="false"
                   className="contact_page_video_1"
                 />
               </div>
