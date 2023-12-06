@@ -294,7 +294,6 @@ const ContactPage = ({
                     }
                     className="contact_page_video_1"
                     controls
-                    autoPlay="false"
                   />
                 </div>
               </div>
