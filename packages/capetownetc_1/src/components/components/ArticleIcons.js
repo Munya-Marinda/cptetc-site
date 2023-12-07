@@ -31,7 +31,7 @@ const ArticleIcons = ({
             </div>
           </Link>
         )}
-        {showTopRight === true && (
+        {/* {showTopRight === true && (
           <div className="image_play_comments_container_1">
             {showCamera === false ? (
               ""
@@ -57,9 +57,9 @@ const ArticleIcons = ({
               </div>
             </Link>
           </div>
-        )}
+        )} */}
       </div>
-      {showVideo === true ? (
+      {/* {showVideo === true ? (
         <Link link={videoLink !== undefined ? videoLink : "#video"}>
           <div className="playVideo_parent_1">
             <img
@@ -70,7 +70,7 @@ const ArticleIcons = ({
         </Link>
       ) : (
         ""
-      )}
+      )} */}
     </>
   );
 };

@@ -398,7 +398,7 @@ WIDE NAV
   width: 100%;
   bottom: 0px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: black;
 }
 
 .nav_search_container_1 {
@@ -428,7 +428,7 @@ WIDE DROPDOWN NAV
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--pinkish_color);
+  background-color: #ffe1b6;
 }
 
 .wide_dropdown_nav_container_1 {
@@ -436,7 +436,7 @@ WIDE DROPDOWN NAV
 }
 
 .wide_dropdown_nav_header_1 {
-  color: white;
+  color: black;
   font-size: 30px;
   padding: 5px 0px;
   font-family: "Gloock", serif;
@@ -469,7 +469,7 @@ WIDE DROPDOWN NAV
 }
 
 .wide_dropdown_links_span_1 {
-  color: white;
+  color: black;
   font-size: 12px;
   /* font-weight: bold; */
   font-weight: 500;
