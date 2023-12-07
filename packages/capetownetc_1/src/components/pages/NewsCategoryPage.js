@@ -36,24 +36,26 @@ const NewsCategoryPage = ({
   //
   const fetch1Posts = async () => {
     try {
-      // const url =
-      //   WP_SiteUrl +
-      //   "/wp-json/wp/v2/posts?categories=" +
-      //   headerData.id +
-      //   "&page=1&orderby=date&order=desc&_embed";
       const url =
         WP_SiteUrl +
         "/wp-json/wp/v2/posts?categories=" +
-        3 +
+        headerData.id +
         "&page=1&orderby=date&order=desc&_embed";
+      // const url =
+      //   WP_SiteUrl +
+      //   "/wp-json/wp/v2/posts?categories=" +
+      //   3 +
+      //   "&page=1&orderby=date&order=desc&_embed";
       const response = await fetch(url);
       if (!response.ok) {
         setPageNumber(1);
         setPostsSet1(false);
         setShowLoadMoreButton(false);
+        console.log("response not okay", response);
         return;
       }
       const postsData = await response.json();
+      console.log(postsData);
       setPageNumber(1);
       setPostsSet1(postsData);
       setPostsSet2(filterAndSortPosts(postsData));
@@ -75,20 +77,20 @@ const NewsCategoryPage = ({
   const loadMorePosts = async () => {
     setIsLoadingNewPosts(true);
     try {
-      // const url =
-      //   WP_SiteUrl +
-      //   "/wp-json/wp/v2/posts?categories=" +
-      //   headerData.id +
-      //   "&page=" +
-      //   (pageNumber + 1) +
-      //   "&orderby=date&order=desc&_embed";
       const url =
         WP_SiteUrl +
         "/wp-json/wp/v2/posts?categories=" +
-        3 +
+        headerData.id +
         "&page=" +
         (pageNumber + 1) +
         "&orderby=date&order=desc&_embed";
+      // const url =
+      //   WP_SiteUrl +
+      //   "/wp-json/wp/v2/posts?categories=" +
+      //   3 +
+      //   "&page=" +
+      //   (pageNumber + 1) +
+      //   "&orderby=date&order=desc&_embed";
       const response = await fetch(url);
       if (!response.ok) {
         setShowLoadMoreButton(false);
@@ -119,6 +121,7 @@ const NewsCategoryPage = ({
   };
   //
   useEffect(() => {
+    console.log("Loading category ID: " + headerData.id);
     //
     if (headerData.id !== undefined && headerData.id !== null) {
       fetch1Posts();
@@ -145,7 +148,7 @@ const NewsCategoryPage = ({
     };
     setAdPositionsFunc();
     window.addEventListener("resize", setAdPositionsFunc);
-  }, []);
+  }, [headerData.id]);
   //
   //
   const changeParentPageNumber = () => {

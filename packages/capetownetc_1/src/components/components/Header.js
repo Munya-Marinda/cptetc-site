@@ -749,7 +749,7 @@ const Header = ({
                   <>
                     {postsSet1.length !== 0 ? (
                       <Carousel
-                        // interval={null}
+                        interval={null}
                         indicators={false}
                         prevIcon={<CustomPrevButton />}
                         nextIcon={<CustomNextButton />}

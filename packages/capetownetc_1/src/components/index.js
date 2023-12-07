@@ -22,6 +22,8 @@ import WinCompetitionsPage from "./pages/WinCompetitionsPage";
 import RateCardPage from "./pages/RateCardPage";
 import SubmitYourContent from "./pages/SubmitYourContent";
 import SearchResultPage from "./pages/SearchResultPage";
+// Import your CSS file
+// import "./styles/styles.css";
 
 const Root = ({ state }) => {
   const [headerData, setHeaderData] = useState("/");
@@ -88,7 +90,7 @@ const Root = ({ state }) => {
           href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto&family=Montserrat:wght@800&display=swap"
           rel="stylesheet"
         />
-
+        {/* <link href="/static/styles.css" rel="stylesheet" /> */}
         {/* BOOTSTRAP CDN */}
         <link
           rel="stylesheet"

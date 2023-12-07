@@ -84,10 +84,10 @@ const ContactPage = ({
   //
   return (
     <>
-      <FullWidthPost
+      {/* <FullWidthPost
         title={"Cape Town Etc Showreel headline copy"}
         link={"#cape-town-etc-showreel-headline-copy"}
-      />
+      /> */}
       <main className="homepage_main_parent_1">
         <div id="sticky_here"></div>
 
@@ -114,14 +114,7 @@ const ContactPage = ({
 
           <div className="post_block_1_parent_2">
             <div className="">
-              <h1 className="contact_page_header_1">Partner With Us</h1>
-              <p className="contact_page_text_1">
-                From news to things to do, Cape {"{town}"} Etc creates
-                world-class content that's delivered to our loyal readers,
-                viewers and community in a way that's tailored towards making an
-                impact
-              </p>
-              <DigitalStats />
+              <h1 className="contact_page_header_1">Contact Us</h1>
 
               {pageObject &&
                 pageObject !== undefined &&
