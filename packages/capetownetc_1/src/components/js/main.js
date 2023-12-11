@@ -282,7 +282,7 @@ export const getCurrentDate = () => {
     daySuffix = "rd";
   }
 
-  const formattedDate = `${dayOfWeek}, ${month} ${dayOfMonth}${daySuffix}, ${year}`;
+  const formattedDate = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
   return formattedDate;
 };
 

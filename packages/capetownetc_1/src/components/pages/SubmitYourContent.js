@@ -93,13 +93,14 @@ const SubmitYourContent = ({
           <div className="post_block_1_parent_2">
             <div className="post_block_1_container_1">
               <div
+                className="post_block_2_header_container_1"
                 style={{
                   width: "100%",
+                  padding: "0px",
                   display: "flex",
                   alignItems: "center",
                   flexDirection: "column",
                   justifyContent: "center",
-                  padding: "0px 10px 0px 0px",
                   transform: "translateY(-22px)",
                 }}
               >
@@ -325,30 +326,33 @@ const SubmitYourContent = ({
                     >
                       By clicking ''I Accept' below, I accept the terms set out
                       in the Content Assignment Agreement and hereby irrevocably
-                      assign to Cape {"{town}"} Etc absolutely and with full title
-                      guarantee, all intellectual property rights and interest
-                      and all other rights in and to the Content (regardless of
-                      the format such Content is submitted in by me).
-                      Furthermore, I hereby confirm and agree that from the date
-                      I accept these terms and conditions and those further
-                      specified in the Content Assignment Agreement, Cape {"{town}"} Etc shall be exclusively entitled to exploit the Content
-                      in any manner or context, throughout the world, on any and
-                      all media whether now known or hereafter invented and in
-                      perpetuity. I also confirm that any third party or person
-                      who is featured in the Content has agreed to such terms
-                      and conditions. Submit I am the sole rights holder of the
-                      Content, I am over 18 years old and I accept the above
-                      Terms & Conditions OR I am the parent or legal guardian of
-                      the sole rights holder of the Content who is under 18
-                      years old and I accept the above Terms & Conditions on the
-                      right's holder's behalf as agent or attorney, as if I was
-                      the rights holder for these purposes.
+                      assign to Cape {"{town}"} Etc absolutely and with full
+                      title guarantee, all intellectual property rights and
+                      interest and all other rights in and to the Content
+                      (regardless of the format such Content is submitted in by
+                      me). Furthermore, I hereby confirm and agree that from the
+                      date I accept these terms and conditions and those further
+                      specified in the Content Assignment Agreement, Cape{" "}
+                      {"{town}"} Etc shall be exclusively entitled to exploit
+                      the Content in any manner or context, throughout the
+                      world, on any and all media whether now known or hereafter
+                      invented and in perpetuity. I also confirm that any third
+                      party or person who is featured in the Content has agreed
+                      to such terms and conditions. Submit I am the sole rights
+                      holder of the Content, I am over 18 years old and I accept
+                      the above Terms & Conditions OR I am the parent or legal
+                      guardian of the sole rights holder of the Content who is
+                      under 18 years old and I accept the above Terms &
+                      Conditions on the right's holder's behalf as agent or
+                      attorney, as if I was the rights holder for these
+                      purposes.
                     </p>
                   </div>
                   <div
                     style={{
-                      marginBottom: "10px",
                       display: "flex",
+                      marginTop: "30px",
+                      marginBottom: "10px",
                       flexDirection: "row",
                       alignItems: "flex-start",
                     }}
@@ -374,7 +378,7 @@ const SubmitYourContent = ({
                       </p>
                     </div>
                   </div>
-                  <div className="submitYourContent_form_group_3">
+                  {/* <div className="submitYourContent_form_group_3">
                     <label
                       className="submitYourContent_form_text_1"
                       style={{ textAlign: "center" }}
@@ -386,7 +390,7 @@ const SubmitYourContent = ({
                       name="sign_your_name"
                       className="submitYourContent_form_text_input_1"
                     />
-                  </div>
+                  </div> */}
                   <div
                     class="submitYourContent_form_group_3"
                     style={{

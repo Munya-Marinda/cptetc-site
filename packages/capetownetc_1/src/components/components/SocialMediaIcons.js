@@ -1,13 +1,8 @@
 import React from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaTiktok,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const SocialMediaIcons = ({ state }) => {
   return (
@@ -31,7 +26,7 @@ const SocialMediaIcons = ({ state }) => {
         style={{ marginRight: "10px" }}
         className="twitter_icon_parent_2"
       >
-        <FaTwitter />
+        <FaXTwitter />
       </Link>
       <Link
         link="#tiktok"

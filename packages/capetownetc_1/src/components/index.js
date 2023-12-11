@@ -22,8 +22,6 @@ import WinCompetitionsPage from "./pages/WinCompetitionsPage";
 import RateCardPage from "./pages/RateCardPage";
 import SubmitYourContent from "./pages/SubmitYourContent";
 import SearchResultPage from "./pages/SearchResultPage";
-// Import your CSS file
-// import "./styles/styles.css";
 
 const Root = ({ state }) => {
   const [headerData, setHeaderData] = useState("/");
@@ -87,7 +85,7 @@ const Root = ({ state }) => {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto&family=Montserrat:wght@800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto:wght@700&family=Montserrat:wght@800&display=swap"
           rel="stylesheet"
         />
         {/* <link href="/static/styles.css" rel="stylesheet" /> */}
@@ -125,7 +123,8 @@ const Root = ({ state }) => {
             data.route === "/advertise/contact/" || data.route === "/advertise/"
           }
         />
-        {/* <RateCardPage
+        {/*
+        <RateCardPage
           _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
@@ -133,7 +132,8 @@ const Root = ({ state }) => {
             data.route === "/advertise/advertising/" ||
             data.route === "/advertise/"
           }
-        /> */}
+        />
+         */}
         <SubscribePage
           _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}
