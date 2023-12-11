@@ -20,7 +20,7 @@ const FullScreenCategories = () => {
           ["Family", "/things-to-do/family/", "family_wallpaper_1"],
           ["Adventure", "/things-to-do/adventure/", "adventure_wallpaper_1"],
           [
-            "Events & Entertainment",
+            "Events <br/>& Entertainment",
             "/things-to-do/entertainment/",
             "eventsAndEntertainment_wallpaper_1",
           ],
@@ -47,7 +47,7 @@ const FullScreenCategories = () => {
           ["Family", "/things-to-do/family/", "family_wallpaper_1"],
           ["Adventure", "/things-to-do/adventure/", "adventure_wallpaper_1"],
           [
-            "Events & Entertainment",
+            "Events <br/>& Entertainment",
             "/things-to-do/entertainment/",
             "eventsAndEntertainment_wallpaper_1",
           ],
@@ -74,7 +74,7 @@ const FullScreenCategories = () => {
               <div className="full_screen_categories_container_1">
                 <div className={"category_wallpaper_1 " + category[2]}></div>
                 <div className="category_overlay_1"></div>
-                <span>{category[0]}</span>
+                <span dangerouslySetInnerHTML={{ __html: category[0] }} />
               </div>
             </Link>
           );

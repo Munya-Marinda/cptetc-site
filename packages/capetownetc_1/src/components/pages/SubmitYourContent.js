@@ -114,7 +114,7 @@ const SubmitYourContent = ({
 
                 <p
                   style={{
-                    width: "70%",
+                    width: "100%",
                     fontSize: "20px",
                     margin: "30px 0px",
                     fontWeight: "bold",
@@ -127,7 +127,7 @@ const SubmitYourContent = ({
 
                 <p
                   style={{
-                    width: "70%",
+                    width: "100%",
                     fontSize: "16px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -140,7 +140,7 @@ const SubmitYourContent = ({
 
                 <p
                   style={{
-                    width: "70%",
+                    width: "100%",
                     fontSize: "16px",
                     margin: "10px 0px 50px 0px",
                     textAlign: "center",

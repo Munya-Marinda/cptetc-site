@@ -6,7 +6,7 @@ import ArticleIcons from "../components/ArticleIcons";
 import { FaGreaterThan } from "react-icons/fa";
 import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
 import { Placeholder } from "react-bootstrap";
-import { CustomWPRestServicePostObject } from "../js/main";
+import { CustomWPRestServicePostObject, filterAndSortPosts } from "../js/main";
 import ArticleListView_1 from "../components/article-listing/ArticleListView_1";
 import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
@@ -16,28 +16,34 @@ const NewsTrendingPage = ({
   headerIsSticky,
 }) => {
   // WESTERN CAPE  | 10375
-  const postsSet1_categoryID = 3;
+  const postsSet1_categoryID = 10375;
   const [postsSet1, setPostsSet1] = useState(null);
+  const [postsSet1_top, setPostsSet1_top] = useState(null);
   //
   // SOUTH AFRICA | 10376
-  const postsSet2_categoryID = 3;
+  const postsSet2_categoryID = 10376;
   const [postsSet2, setPostsSet2] = useState(null);
+  const [postsSet2_top, setPostsSet2_top] = useState(null);
   //
-  // World | 7747;
-  const postsSet3_categoryID = 3;
+  // World | 7747
+  const postsSet3_categoryID = 7747;
   const [postsSet3, setPostsSet3] = useState(null);
+  const [postsSet3_top, setPostsSet3_top] = useState(null);
   //
   // Opinion | 10378
-  const postsSet4_categoryID = 3;
+  const postsSet4_categoryID = 10378;
   const [postsSet4, setPostsSet4] = useState(null);
+  const [postsSet4_top, setPostsSet4_top] = useState(null);
   //
   // Good News | 10379
-  const postsSet5_categoryID = 3;
+  const postsSet5_categoryID = 10379;
   const [postsSet5, setPostsSet5] = useState(null);
+  const [postsSet5_top, setPostsSet5_top] = useState(null);
   //
   // Sport | 10381
-  const postsSet6_categoryID = 3;
+  const postsSet6_categoryID = 10381;
   const [postsSet6, setPostsSet6] = useState(null);
+  const [postsSet6_top, setPostsSet6_top] = useState(null);
   //
   const WP_SiteUrl = state.source.url;
   const [adPositions, setAdPositions] = useState(false);
@@ -56,7 +62,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet1_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet1(false);
@@ -64,6 +70,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet1(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet1_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);
@@ -81,7 +90,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet2_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet2(false);
@@ -89,6 +98,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet2(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet2_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet2(false);
@@ -106,7 +118,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet3_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet3(false);
@@ -114,6 +126,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet3(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet3_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet3(false);
@@ -131,7 +146,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet4_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet4(false);
@@ -139,6 +154,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet4(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet4_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet4(false);
@@ -156,7 +174,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet5_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet5(false);
@@ -164,6 +182,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet5(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet5_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet5(false);
@@ -181,7 +202,7 @@ const NewsTrendingPage = ({
           WP_SiteUrl +
             "/wp-json/wp/v2/posts?categories=" +
             postsSet6_categoryID +
-            "&per_page=100&orderby=date&order=desc&_embed"
+            "&per_page=50&orderby=date&order=desc&_embed"
         );
         if (!response.ok) {
           setPostsSet6(false);
@@ -189,6 +210,9 @@ const NewsTrendingPage = ({
         }
         const postsData = await response.json();
         setPostsSet6(postsData);
+
+        const shallowCopy = postsData.slice();
+        setPostsSet6_top(filterAndSortPosts(shallowCopy));
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet6(false);
@@ -230,6 +254,8 @@ const NewsTrendingPage = ({
     sidePosts,
     categoryID,
   }) => {
+    //
+    //
     return (
       <div className="post_block_2_right_bar_parent_1">
         <div className="ad_square_1"></div>
@@ -241,86 +267,6 @@ const NewsTrendingPage = ({
           WP_SiteUrl={WP_SiteUrl}
           postsSet_categoryID={categoryID}
         />
-
-        {/* <div className="magazine_topNews_parent_1">
-          <Link link={sideTitleLink}>
-            <div className="magazine_topNews_header_1">
-              <span className="magazine_topNews_headerText_1">{sideTitle}</span>
-              <span className="magazine_topNews_icon_1">
-                <FaGreaterThan />
-              </span>
-            </div>
-          </Link>
-
-          {sidePosts !== null ? (
-            <>
-              {sidePosts !== false ? (
-                <>
-                  {sidePosts.length !== 0 ? (
-                    <>
-                      {sidePosts.slice(7, 13)?.map((post, index) => {
-                        const customPost = CustomWPRestServicePostObject(
-                          WP_SiteUrl,
-                          post,
-                          categoryID
-                        );
-                        //
-                        //
-                        //
-                        //
-                        //
-                        return (
-                          <div
-                            className="magazine_topNews_container_1"
-                            key={index}
-                          >
-                            <Link link={customPost.slug}>
-                              <h6 dangerouslySetInnerHTML={customPost.title} />
-                            </Link>
-                            <CategoryDateText
-                              categoryText={customPost.categoryText}
-                              dateText={customPost.date}
-                            />
-                          </div>
-                        );
-                      })}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_1">
-                      <h1>NO NEW POSTS FOUND</h1>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="spinner_parent_1">
-                  <h1>FAILED TO FETCH POSTS</h1>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="post_block_3_posts_container_1">
-              {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                <div className="placeholder_child_7_parent_parent" key={n}>
-                  <Placeholder
-                    animation="glow"
-                    className="placeholder_child_7_parent"
-                  >
-                    <Placeholder
-                      xs={7}
-                      bg="dark"
-                      className="placeholder_child_7_1"
-                    />
-                    <Placeholder
-                      xs={4}
-                      bg="dark"
-                      className="placeholder_child_7_1"
-                    />
-                  </Placeholder>
-                </div>
-              ))}
-            </div>
-          )}
-        </div> */}
       </div>
     );
   };
@@ -389,7 +335,6 @@ const NewsTrendingPage = ({
 
   const PostBlock = ({
     mainTitle,
-    navigationID,
     see_all_link,
     see_latest_link,
     featurePosts,
@@ -397,6 +342,7 @@ const NewsTrendingPage = ({
     sideTitle,
     sideTitleLink,
     sideBarType,
+    sidePosts,
   }) => {
     //
     //
@@ -406,7 +352,7 @@ const NewsTrendingPage = ({
           title={mainTitle}
           link_1={see_all_link}
           link_2={see_latest_link}
-          postsSet={postsSet1}
+          postsSet={featurePosts}
           WP_SiteUrl={WP_SiteUrl}
           postsSet_categoryID={featurePosts_categoryID}
         />
@@ -415,7 +361,7 @@ const NewsTrendingPage = ({
             categoryID={featurePosts_categoryID}
             sideTitleLink={sideTitleLink}
             sideTitle={sideTitle}
-            sidePosts={featurePosts}
+            sidePosts={sidePosts}
           />
         )}
         {sideBarType === "RightBarWithOutMagazine" && (
@@ -423,7 +369,7 @@ const NewsTrendingPage = ({
             categoryID={featurePosts_categoryID}
             sideTitleLink={sideTitleLink}
             sideTitle={sideTitle}
-            sidePosts={featurePosts}
+            sidePosts={sidePosts}
           />
         )}
       </div>
@@ -489,8 +435,8 @@ const NewsTrendingPage = ({
             featurePosts_categoryID={postsSet1_categoryID}
             sideTitle={"Top News"}
             sideTitleLink={"/news/western-cape/"}
-            sidePosts={postsSet1}
             sideBarType={"RightBarWithMagazine"}
+            sidePosts={postsSet1_top}
           />
         </div>
 
@@ -545,6 +491,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/south-africa/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet2_top}
           />
         </div>
 
@@ -592,6 +539,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/world/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet3_top}
           />
         </div>
 
@@ -639,6 +587,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/opinion/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet4_top}
           />
         </div>
 
@@ -686,6 +635,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/good-news/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet5_top}
           />
         </div>
 
@@ -733,6 +683,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/business/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet6_top}
           />
         </div>
 
@@ -780,6 +731,7 @@ const NewsTrendingPage = ({
             sideTitle={"Top News"}
             sideTitleLink={"/news/sport/"}
             sideBarType={"RightBarWithOutMagazine"}
+            sidePosts={postsSet6_top}
           />
         </div>
 

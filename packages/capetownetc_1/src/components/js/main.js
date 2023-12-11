@@ -103,11 +103,15 @@ export const CustomWPRestServicePostObject = (
       ? post?._links?.replies[0]?.href
       : 0;
   //
+  //
   let postImgUrl =
     "https://images.unsplash.com/photo-1620121478247-ec786b9be2fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60";
   if (post?._embedded["wp:featuredmedia"] !== undefined) {
     if (post?._embedded["wp:featuredmedia"]?.length > 0) {
-      postImgUrl = post?._embedded["wp:featuredmedia"][0].source_url;
+      // postImgUrl = post?._embedded["wp:featuredmedia"][0].source_url;
+      postImgUrl =
+        post?._embedded["wp:featuredmedia"][0].media_details?.sizes?.medium
+          ?.source_url;
     }
   }
   //

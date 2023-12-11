@@ -184,7 +184,7 @@ const fetchMenu = () => {
         {
           id: "68166",
           title: "Rate Card",
-          url: "/advertise/",
+          url: "#download-rate-card",
           type: "page",
         },
       ],

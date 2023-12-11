@@ -121,9 +121,11 @@ const Root = ({ state }) => {
         <ContactPage
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
-          when={data.route === "/advertise/contact/"}
+          when={
+            data.route === "/advertise/contact/" || data.route === "/advertise/"
+          }
         />
-        <RateCardPage
+        {/* <RateCardPage
           _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}
           headerStickyContainerHeight={headerStickyContainerHeight}
@@ -131,7 +133,7 @@ const Root = ({ state }) => {
             data.route === "/advertise/advertising/" ||
             data.route === "/advertise/"
           }
-        />
+        /> */}
         <SubscribePage
           _toggledleSubmitYourContentModal={_toggledleSubmitYourContentModal}
           headerIsSticky={headerIsSticky}

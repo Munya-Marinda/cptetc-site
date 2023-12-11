@@ -51,11 +51,9 @@ const NewsCategoryPage = ({
         setPageNumber(1);
         setPostsSet1(false);
         setShowLoadMoreButton(false);
-        console.log("response not okay", response);
         return;
       }
       const postsData = await response.json();
-      console.log(postsData);
       setPageNumber(1);
       setPostsSet1(postsData);
       setPostsSet2(filterAndSortPosts(postsData));
@@ -67,7 +65,6 @@ const NewsCategoryPage = ({
       }
       //
     } catch (error) {
-      console.error("Error fetching posts:", error);
       setPostsSet1(false);
       setPageNumber(1);
     }

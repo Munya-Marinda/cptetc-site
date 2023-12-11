@@ -609,7 +609,7 @@ const Header = ({
                                   {title}
                                 </span>
                                 {isActiveParentLink && (
-                                  <div className="nav_wide_links_active_1"></div>
+                                  <div className="nav_wide_links_active_2"></div>
                                 )}
                               </div>
                             </Link>

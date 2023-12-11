@@ -3,8 +3,8 @@
 /* VARIABLES */
 :root {
   --maxContentWidth: 1180px;
+  --imageWidthRatio: 680px / 450px;
   /* COLORS */
-  /* --pinkish_color: #911c12ff; */
   --pinkish_color: #ef4050ff;
   --peach_1: #fff6e7;
   --gray_1: rgb(246, 246, 246);
@@ -27,17 +27,17 @@
   --content_spacing_top_3: 20px;
   --content_spacing_bottom_1: 70px;
   --content_spacing_bottom_2: 35px;
-  --post_block_1_featureImg_1_width: 784.556px;
-  --post_block_1_featureImg_1_height: 519.643px;
-  --post_block_1_featureImgs_1_width: 380.434px;
-  --post_block_1_featureImgs_1_height: 251.975px;
+  --post_block_1_featureImg_1_width: 781.846px;
+  --post_block_1_featureImg_1_height: 517px;
+  --post_block_1_featureImgs_1_width: 373.592px;
+  --post_block_1_featureImgs_1_height: 247.23px;
   --post_block_2_header_parent_1_width: 861.072px;
   --post_block_2_featureImg_1_width: 420.581px;
-  --post_block_2_featureImg_1_height: 293.645px;
+  --post_block_2_featureImg_1_height: 278px;
   --post_block_2_featureImg_2_width: 484.746px;
   --post_block_2_featureImg_2_height: 313.655px;
   --post_block_2_postImg_2_width: 239.728px;
-  --post_block_2_postImg_2_height: 137.57px;
+  --post_block_2_postImg_2_height: 158px;
   --post_block_3_postImg_1_width: 274.583px;
   --post_block_3_postImg_1_height: 172.372px;
   --post_block_3_postImg_2_width: 90px;
@@ -221,7 +221,6 @@ body {
 .topbar_socialLinks_parent_1 > a {
   padding: 6px 7px 3px 7px;
   border-radius: 100px;
-  margin-right: 10px;
   color: white;
   font-size: 11px;
 }
@@ -401,6 +400,15 @@ WIDE NAV
   background-color: black;
 }
 
+.nav_wide_links_active_2 {
+  left: 0px;
+  height: 4px;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  background-color: white;
+}
+
 .nav_search_container_1 {
   width: 20px;
   height: 20px;
@@ -428,7 +436,7 @@ WIDE DROPDOWN NAV
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffe1b6;
+  background-color: #ecdfcd;
 }
 
 .wide_dropdown_nav_container_1 {
@@ -825,7 +833,7 @@ HOME POST BLOCK 1
 /* OVERLAY STYLING SET 3 */
 
 .post_block_2_postImg_container_1_darkOverlay > div > a > h1 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* END OF OVERLAY STYLING */
@@ -970,10 +978,10 @@ HOME POST BLOCK 1
 
 .full_screen_categories_container_2 > span,
 .full_screen_categories_container_1 > span {
-  font-family: "Gloock", serif;
-  text-align: center;
-  font-size: 22px;
   color: white;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Gloock", serif;
 }
 
 /* 
@@ -1144,11 +1152,11 @@ HOME POST BLOCK 1
 }
 
 .post_block_2_postText_1 > a > h1 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .post_block_3_postText_1 > a > h1 {
-  font-size: 22px;
+  font-size: 20px;
 }
 /* 
 //
@@ -1401,7 +1409,7 @@ FULL WIDTH POST
  HOME POST BLOCK 3
 */
 .post_block_3_featuredPostText_parent_1 {
-  max-width: 220px;
+  /* max-width: 220px; */
   margin-left: 31.629px;
 }
 
@@ -1424,7 +1432,7 @@ FULL WIDTH POST
 
 .win_featuredPostText_parent_1 > h1 {
   padding: 0px 25px;
-  margin: 0px;
+  margin: 12px 0px;
   font-size: 20px;
   font-weight: 500;
 }
@@ -1842,7 +1850,7 @@ WIN
   font-size: 12px;
   font-weight: 500;
   border-radius: 0px;
-  padding: 5px 10px;
+  padding: 8px 25px;
 }
 
 .win_posts_container_1 {
@@ -1850,14 +1858,14 @@ WIN
   display: flex;
   margin-top: 25px;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   max-width: var(--post_block_2_header_parent_1_width);
 }
 
 .win_featuredPostText_parent_1 {
   width: 100%;
-  max-width: 370px;
+  /* max-width: 370px; */
 }
 
 .win_featuredPostText_parent_1 > div {
@@ -1895,7 +1903,6 @@ SINGLE VIEW
   margin-bottom: 10px;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px 10px 5px 10px;
   justify-content: space-between;
 }
 
@@ -1931,13 +1938,11 @@ SINGLE VIEW
 }
 
 .single_view_header_parent > h1 {
-  font-size: 26px;
-  padding: 0px 10px;
+  font-size: 30px;
 }
 
 .single_view_content_parent_1 {
   width: 100%;
-  padding: 0px 10px;
   overflow-x: scroll;
 }
 
@@ -2113,7 +2118,7 @@ CONTACT PAGE
 
 .contact_page_section_2_container_2 {
   margin-left: 20px;
-  padding: 25px;
+  /* padding: 25px; */
   background-color: rgb(221, 237, 244);
 }
 
@@ -2333,7 +2338,7 @@ SUBSCRIBE
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .subscribe_button_1,

@@ -84,10 +84,10 @@ const ContactPage = ({
   //
   return (
     <>
-      {/* <FullWidthPost
+      <FullWidthPost
         title={"Cape Town Etc Showreel headline copy"}
         link={"#cape-town-etc-showreel-headline-copy"}
-      /> */}
+      />
       <main className="homepage_main_parent_1">
         <div id="sticky_here"></div>
 
@@ -114,9 +114,24 @@ const ContactPage = ({
 
           <div className="post_block_1_parent_2">
             <div className="">
-              <h1 className="contact_page_header_1">Contact Us</h1>
+              <h1 className="contact_page_header_1">Partner With Us</h1>
 
-              {pageObject &&
+              <h6
+                style={{
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  fontFamily: '"Roboto", Arial',
+                }}
+              >
+                From news to things to do, Cape {"{town}"} Etc creates
+                world-class content that's delivered to our loyal readers,
+                viewers and community in a way that's tailored towards making an
+                impact.
+              </h6>
+
+              <DigitalStats />
+
+              {/* {pageObject &&
                 pageObject !== undefined &&
                 pageObject !== null && (
                   <div
@@ -124,7 +139,54 @@ const ContactPage = ({
                       __html: pageObject.content.rendered,
                     }}
                   />
-                )}
+                )} */}
+              <div>
+                <p
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    lineHeight: "20px",
+                  }}
+                >
+                  We consistently deliver a 360 degree approach to media,
+                  including written, visual and strategic elements. If your
+                  brand shares our vision of communicating with Cape Town and
+                  the world, we welcome the opportunity to collaborate with you
+                  to tell your story. Our team of creatives is ready and waiting
+                  to build a campaign that ticks all your boxes and that's in
+                  line with your budget.
+                </p>
+                <br />
+                <h4
+                  style={{
+                    fontWeight: "bold",
+                    fontFamily: '"Roboto", Arial',
+                  }}
+                >
+                  To advertise in print or online:
+                </h4>
+                <p
+                  style={{
+                    fontSize: "16px",
+                    fontFamily: '"Roboto", Arial',
+                  }}
+                >
+                  Please contact Kayla Petermann <br />
+                  021 416 0141 or{" "}
+                  <a href="mailto:kayla@habarimedia.com">
+                    kayla@habarimedia.com
+                  </a>
+                </p>
+
+                <button
+                  className="subscribe_button_2"
+                  style={{
+                    margin: "0px",
+                  }}
+                >
+                  Download Rate Card
+                </button>
+              </div>
             </div>
           </div>
 
@@ -171,12 +233,11 @@ const ContactPage = ({
 
               <div className="contact_page_section_2_parent">
                 <div className="contact_page_section_2_container_1">
-                  <h1 className="contact_page_header_2">
+                  <h1 className="contact_page_header_2 content_spacing_bottom_2">
                     Home to Africa's Top Digital and Print Titles.
                   </h1>
-                  <div className="contact_page_stats_parent">
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+20</h1> */}
+                  <div className="contact_page_stats_parent_1">
+                    <div className="contact_page_stat_container_1">
                       <CountUp
                         start={0}
                         end={20}
@@ -193,8 +254,7 @@ const ContactPage = ({
                       </CountUp>
                       <p>Brands</p>
                     </div>
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+120 mil</h1> */}
+                    <div className="contact_page_stat_container_1">
                       <CountUp
                         start={0}
                         end={120}
@@ -211,8 +271,7 @@ const ContactPage = ({
                       </CountUp>
                       <p>Website Views</p>
                     </div>
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+4 mil</h1> */}
+                    <div className="contact_page_stat_container_1">
                       <CountUp start={0} end={4} delay={0} duration={10}>
                         {({ countUpRef }) => (
                           <div>
@@ -224,8 +283,9 @@ const ContactPage = ({
                       </CountUp>
                       <p>Social Followers</p>
                     </div>
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+840 k</h1> */}
+                  </div>
+                  <div className="contact_page_stats_parent_1">
+                    <div className="contact_page_stat_container_1">
                       <CountUp
                         start={0}
                         end={840}
@@ -242,8 +302,7 @@ const ContactPage = ({
                       </CountUp>
                       <p>Email Subscribers</p>
                     </div>
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+1.2 mil</h1> */}
+                    <div className="contact_page_stat_container_1">
                       <CountUp start={0} end={2} delay={0} duration={10}>
                         {({ countUpRef }) => (
                           <div>
@@ -256,8 +315,7 @@ const ContactPage = ({
                       </CountUp>
                       <p>Print Run</p>
                     </div>
-                    <div className="contact_page_stat_container">
-                      {/* <h1>+225</h1> */}
+                    <div className="contact_page_stat_container_1">
                       <CountUp
                         start={0}
                         end={225}
@@ -275,6 +333,7 @@ const ContactPage = ({
                       <p>Staff</p>
                     </div>
                   </div>
+
                   <p className="contact_page_small_text">
                     <i>*per annum</i>
                   </p>

@@ -289,12 +289,27 @@ const SubscribePage = ({
                     </ul>
 
                     <div className="subscribe_button_group">
-                      <button className="subscribe_button_1">BUY PRINT</button>
-                      <button className="subscribe_button_1">
+                      <button
+                        className="subscribe_button_1"
+                        style={{
+                          margin: "0px 10px",
+                        }}
+                      >
+                        BUY PRINT
+                      </button>
+                      <button
+                        className="subscribe_button_1"
+                        style={{
+                          margin: "0px 10px",
+                        }}
+                      >
                         BUY DIGITAL
                       </button>
                       <button
                         className="subscribe_button_2"
+                        style={{
+                          margin: "0px 10px",
+                        }}
                         onClick={handleSubmitYourContentShow}
                       >
                         SUBSCRIBE
@@ -302,7 +317,11 @@ const SubscribePage = ({
                     </div>
                   </div>
                 </div>
-                <div className="subscribe_recent_issues_parent_1 content_spacing_top_2">
+                <div className="ad_horizontal_2_parent content_spacing_top_2">
+                  <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                  <div className="ad_horizontal_2"></div>
+                </div>
+                {/* <div className="subscribe_recent_issues_parent_1 content_spacing_top_2">
                   <div className="subscribe_recent_issues_container_1 padding_on_mobile">
                     <span className="subscribe_recent_issues_text_1">
                       <b>Recent Issues</b>
@@ -424,7 +443,7 @@ const SubscribePage = ({
                     <h6 className="ad_text_1">ADVERTISEMENT</h6>
                     <div className="ad_horizontal_2"></div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
