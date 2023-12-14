@@ -5,7 +5,7 @@
   --maxContentWidth: 1180px;
   --imageWidthRatio: 680px / 450px;
   /* COLORS */
-  --pinkish_color: #ef4050ff;
+  --pinkish_color: #c83428ff;
   --peach_1: #fff6e7;
   --gray_1: rgb(246, 246, 246);
   --blue_1: rgb(0, 160, 247);
@@ -501,7 +501,7 @@ CAROUSEL
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  background-color: var(--gray_1);
+  background-color: #f8f4ee;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
