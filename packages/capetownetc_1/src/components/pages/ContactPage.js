@@ -340,13 +340,7 @@ const ContactPage = ({
                 </div>
 
                 <div className="contact_page_section_2_container_2">
-                  <video
-                    src={
-                      "https://ambassador.daddysdeals.co.za/features/capetownetc-assets/CTE-Website-Video.mp4"
-                    }
-                    className="contact_page_video_1"
-                    controls
-                  />
+                  
                 </div>
               </div>
 

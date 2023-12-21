@@ -447,7 +447,7 @@ const WinTrending = ({
         <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
-            <div className="post_block_2_header_container_1">
+            {/* <div className="post_block_2_header_container_1">
               <ArticleListView_2
                 title={"Photo of the Month"}
                 link_1={"/photo-of-the-month"}
@@ -475,7 +475,7 @@ const WinTrending = ({
                 postsSet_categoryTitle={"VIDEO OF THE MONTH"}
                 postsSet_categoryID={postsSet3_categoryID}
               />
-            </div>
+            </div> 
 
             <div className="post_block_2_right_bar_parent_1">
               <div className="ad_square_1"></div>
@@ -580,7 +580,7 @@ const WinTrending = ({
                   )}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="ad_vertical_1_parent"></div>
