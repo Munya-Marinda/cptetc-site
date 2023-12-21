@@ -1836,11 +1836,11 @@ WIN
 }
 
 .win_enter_button_1_active:hover {
-  background-color: #c71f1f;
+  background-color: var(--pinkish_color);
 }
 
 .win_enter_button_1_inactive {
-  background-color: gray;
+  background-color: var(--pinkish_color);
   cursor: not-allowed;
 }
 

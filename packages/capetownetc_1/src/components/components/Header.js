@@ -673,18 +673,19 @@ const Header = ({
                         <>
                           {menuChildren.length !== 0 ? (
                             <>
-                              {menuParentTitle !== "Advertise" && (
-                                <Link link={menuParentUrl}>
-                                  <div className="wide_dropdown_links_container_1">
-                                    <span className="wide_dropdown_links_span_1">
-                                      Trending
-                                    </span>
-                                    {menuParentUrl === data.route && (
-                                      <div className="nav_wide_links_active_1"></div>
-                                    )}
-                                  </div>
-                                </Link>
-                              )}
+                              {menuParentTitle !== "Advertise" &&
+                                menuParentTitle !== "Win" && (
+                                  <Link link={menuParentUrl}>
+                                    <div className="wide_dropdown_links_container_1">
+                                      <span className="wide_dropdown_links_span_1">
+                                        Trending
+                                      </span>
+                                      {menuParentUrl === data.route && (
+                                        <div className="nav_wide_links_active_1"></div>
+                                      )}
+                                    </div>
+                                  </Link>
+                                )}
                               {menuChildren.map((child, index) => {
                                 const child_url = FixInvalidLink(child.url);
                                 //

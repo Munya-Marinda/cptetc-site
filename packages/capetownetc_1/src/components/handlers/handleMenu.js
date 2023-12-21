@@ -121,18 +121,18 @@ const fetchMenu = () => {
           url: "/win/competitions/",
           type: "category",
         },
-        {
-          id: "10382",
-          title: "Photo Of The Month",
-          url: "/win/photo-of-the-month/",
-          type: "category",
-        },
-        {
-          id: "10383",
-          title: "Video Of The Month",
-          url: "/win/video-of-the-month/",
-          type: "category",
-        },
+        // {
+        //   id: "10382",
+        //   title: "Photo Of The Month",
+        //   url: "/win/photo-of-the-month/",
+        //   type: "category",
+        // },
+        // {
+        //   id: "10383",
+        //   title: "Video Of The Month",
+        //   url: "/win/video-of-the-month/",
+        //   type: "category",
+        // },
       ],
     },
     _212964_: {

@@ -1,16 +1,34 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "5a3cacde6a7319e0cb81",
+  "hash": "12ba62baafcdcd056dde",
   "publicPath": "",
   "outputPath": "C:\\repos\\capetownetc\\build\\static",
   "assetsByChunkName": {
-    "capetownetc": "capetownetc.module.js"
+    "capetownetc": [
+      "capetownetc.module.js",
+      "capetownetc.f6b4b706238c1464f9ba.hot-update.js"
+    ]
   },
   "assets": [
     {
+      "name": "capetownetc.f6b4b706238c1464f9ba.hot-update.js",
+      "size": 216588,
+      "chunks": [
+        "capetownetc"
+      ],
+      "chunkNames": [
+        "capetownetc"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "capetownetc.module.js",
-      "size": 36356302,
+      "size": 36367049,
       "chunks": [
         "capetownetc"
       ],
@@ -18,6 +36,17 @@
         "capetownetc"
       ],
       "info": {},
+      "emitted": false
+    },
+    {
+      "name": "f6b4b706238c1464f9ba.hot-update.json",
+      "size": 53,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
       "emitted": false
     }
   ],
@@ -28,7 +57,8 @@
         "capetownetc"
       ],
       "assets": [
-        "capetownetc.module.js"
+        "capetownetc.module.js",
+        "capetownetc.f6b4b706238c1464f9ba.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -39,7 +69,8 @@
     {
       "id": "capetownetc",
       "files": [
-        "capetownetc.module.js"
+        "capetownetc.module.js",
+        "capetownetc.f6b4b706238c1464f9ba.hot-update.js"
       ]
     }
   ]
