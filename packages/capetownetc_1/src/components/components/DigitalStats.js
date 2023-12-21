@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 const DigitalStats = () => {
   const countUpDuration = 7;
   return (
-    <div class="contact_page_section_2_parent">
+    <div class="contact_page_section_2_parent" style={{ margin: "40px 0px" }}>
       <div style={{ width: "100%" }}>
         <div className="contact_page_stats_parent_1 content_spacing_top_2">
           <div className="contact_page_stat_container_1">
